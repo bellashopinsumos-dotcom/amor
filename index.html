@@ -239,6 +239,40 @@ footer{padding-top:40px;font-size:10px}
  .chapter-story-text,.bud,.bud-flower,.finale-heart{animation:none;transition:none}
 }
 
+
+/* Recuerdos: álbum adaptable a móvil, fotos completas al ampliarlas */
+.memories{margin:15px auto 80px;padding-top:16px}
+.memories .section-heading{font-size:clamp(34px,6vw,46px)}
+.memory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:31px 0 16px}
+.memory-photo{position:relative;display:block;width:100%;aspect-ratio:3/4;padding:7px 7px 26px;border:1px solid #eddbdc;border-radius:8px;background:#fffdfa;box-shadow:0 12px 23px #753f5519;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.memory-photo:nth-child(4n+2){transform:rotate(1.3deg)}
+.memory-photo:nth-child(4n+3){transform:rotate(-1deg)}
+.memory-photo:hover,.memory-photo:focus-visible{transform:translateY(-5px) rotate(0);box-shadow:0 18px 29px #753f5529}
+.memory-photo img{display:block;width:100%;height:100%;border-radius:4px;object-fit:cover;object-position:center;background:#f8e9e8}
+.memory-number{position:absolute;bottom:8px;left:0;right:0;font:italic 12px var(--serif);color:#966879;text-align:center;letter-spacing:.11em}
+.memory-hint{font-size:11px;color:#a27b86;text-align:center;letter-spacing:.08em;margin:9px 0 35px}
+.memory-video-frame{max-width:560px;margin:0 auto;padding:13px;background:linear-gradient(155deg,#fffcfa,#f8e7e9);border:1px solid #eacdd3;border-radius:21px;box-shadow:0 17px 40px #753f551c}
+.memory-video-top{display:flex;justify-content:space-between;align-items:center;padding:5px 9px 13px}
+.memory-video-kicker{font-size:10px;letter-spacing:.15em;color:#925f74;text-transform:uppercase}
+.memory-video-mark{font-size:22px;color:#b6778d}
+.memory-video-frame video{display:block;width:100%;max-height:65svh;border-radius:11px;background:#281a24;object-fit:contain}
+.memory-video-note{font:italic 15px/1.5 var(--serif);color:#925f74;text-align:center;margin:15px auto 6px;padding:0 8px}
+.memory-dialog{width:min(94vw,800px);max-width:94vw;max-height:94svh;padding:35px 14px 14px;margin:auto;border:1px solid #ebcdd2;border-radius:16px;background:#fffaf8;box-shadow:0 25px 90px #38203165}
+.memory-dialog::backdrop{background:rgba(33,21,31,.82);backdrop-filter:blur(6px)}
+.memory-dialog:not([open]){display:none}
+.memory-dialog img{display:block;max-width:100%;width:auto;max-height:calc(94svh - 116px);height:auto;object-fit:contain;margin:0 auto;border-radius:5px}
+.memory-close{position:absolute;right:9px;top:5px;border:0;background:transparent;color:#75465b;font-size:31px;line-height:1;padding:0 9px}
+.memory-dialog-controls{display:flex;justify-content:space-between;align-items:center;gap:9px;margin:15px auto 0;max-width:420px;font-size:12px;color:#90697a}
+.memory-dialog-controls button{font:12px var(--sans);background:#f5e5e9;border:1px solid #e9cbd2;border-radius:10px;padding:10px 12px;color:#754258}
+@media(max-width:540px){
+ .memory-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .memory-photo{padding:6px 6px 24px}
+ .memory-video-frame{padding:10px;border-radius:15px}
+ .memory-dialog{width:96vw;max-width:96vw;padding:36px 8px 12px}
+ .memory-dialog-controls button{padding:9px}
+}
+@media(prefers-reduced-motion:reduce){.memory-photo{transition:none}.memory-photo:hover,.memory-photo:focus-visible{transform:none}}
+
 </style>
 </head>
 <body>
@@ -365,6 +399,80 @@ footer{padding-top:40px;font-size:10px}
           <p class="signoff">Con todo mi amor. ❤️</p>
         </article>
       </section>
+
+
+      <!-- GALERÍA DE NUESTROS RECUERDOS: fotos originales en la carpeta recuerdos/ -->
+      <section id="memory-gallery" class="memories" aria-labelledby="memories-heading">
+        <div class="eyebrow">instantes que guardo contigo</div>
+        <h2 id="memories-heading" class="section-heading">Nuestra historia<br><span class="serif-em">en fotografías.</span></h2>
+        <p class="section-body">Me encanta saber que detrás de cada foto hay un momento nuestro. Y que todavía nos quedan tantos por vivir.</p>
+        <div class="memory-grid" aria-label="Galería de 10 fotografías de nuestros recuerdos">
+          
+          <button class="memory-photo" type="button" data-memory-index="0" aria-label="Ampliar fotografía 1 de 10">
+            <img src="recuerdos/WhatsApp%20Image%202026-11-04%20at%203.20.11%20PM.jpeg" alt="Fotografía de nuestros recuerdos, 1 de 10" loading="lazy" decoding="async" />
+            <span class="memory-number" aria-hidden="true">01</span>
+          </button>
+          <button class="memory-photo" type="button" data-memory-index="1" aria-label="Ampliar fotografía 2 de 10">
+            <img src="recuerdos/WhatsApp%20Image%202026-11-04%20at%203.20.12%20PM%20(1).jpeg" alt="Fotografía de nuestros recuerdos, 2 de 10" loading="lazy" decoding="async" />
+            <span class="memory-number" aria-hidden="true">02</span>
+          </button>
+          <button class="memory-photo" type="button" data-memory-index="2" aria-label="Ampliar fotografía 3 de 10">
+            <img src="recuerdos/WhatsApp%20Image%202026-11-04%20at%203.20.12%20PM%20(2).jpeg" alt="Fotografía de nuestros recuerdos, 3 de 10" loading="lazy" decoding="async" />
+            <span class="memory-number" aria-hidden="true">03</span>
+          </button>
+          <button class="memory-photo" type="button" data-memory-index="3" aria-label="Ampliar fotografía 4 de 10">
+            <img src="recuerdos/WhatsApp%20Image%202026-11-04%20at%203.20.12%20PM%20(3).jpeg" alt="Fotografía de nuestros recuerdos, 4 de 10" loading="lazy" decoding="async" />
+            <span class="memory-number" aria-hidden="true">04</span>
+          </button>
+          <button class="memory-photo" type="button" data-memory-index="4" aria-label="Ampliar fotografía 5 de 10">
+            <img src="recuerdos/WhatsApp%20Image%202026-11-04%20at%203.20.12%20PM%20(4).jpeg" alt="Fotografía de nuestros recuerdos, 5 de 10" loading="lazy" decoding="async" />
+            <span class="memory-number" aria-hidden="true">05</span>
+          </button>
+          <button class="memory-photo" type="button" data-memory-index="5" aria-label="Ampliar fotografía 6 de 10">
+            <img src="recuerdos/WhatsApp%20Image%202026-11-04%20at%203.20.12%20PM%20(5).jpeg" alt="Fotografía de nuestros recuerdos, 6 de 10" loading="lazy" decoding="async" />
+            <span class="memory-number" aria-hidden="true">06</span>
+          </button>
+          <button class="memory-photo" type="button" data-memory-index="6" aria-label="Ampliar fotografía 7 de 10">
+            <img src="recuerdos/WhatsApp%20Image%202026-11-04%20at%203.20.12%20PM.jpeg" alt="Fotografía de nuestros recuerdos, 7 de 10" loading="lazy" decoding="async" />
+            <span class="memory-number" aria-hidden="true">07</span>
+          </button>
+          <button class="memory-photo" type="button" data-memory-index="7" aria-label="Ampliar fotografía 8 de 10">
+            <img src="recuerdos/WhatsApp%20Image%202026-11-04%20at%203.20.13%20PM%20(1).jpeg" alt="Fotografía de nuestros recuerdos, 8 de 10" loading="lazy" decoding="async" />
+            <span class="memory-number" aria-hidden="true">08</span>
+          </button>
+          <button class="memory-photo" type="button" data-memory-index="8" aria-label="Ampliar fotografía 9 de 10">
+            <img src="recuerdos/WhatsApp%20Image%202026-11-04%20at%203.20.13%20PM%20(2).jpeg" alt="Fotografía de nuestros recuerdos, 9 de 10" loading="lazy" decoding="async" />
+            <span class="memory-number" aria-hidden="true">09</span>
+          </button>
+          <button class="memory-photo" type="button" data-memory-index="9" aria-label="Ampliar fotografía 10 de 10">
+            <img src="recuerdos/WhatsApp%20Image%202026-11-04%20at%203.20.13%20PM.jpeg" alt="Fotografía de nuestros recuerdos, 10 de 10" loading="lazy" decoding="async" />
+            <span class="memory-number" aria-hidden="true">10</span>
+          </button>
+        </div>
+        <p class="memory-hint">Toca una foto para verla completa.</p>
+        <div class="memory-video-frame">
+          <div class="memory-video-top">
+            <span class="memory-video-kicker">un recuerdo en movimiento</span>
+            <span class="memory-video-mark" aria-hidden="true">♡</span>
+          </div>
+          <video controls playsinline preload="metadata" aria-label="Video de nuestros recuerdos juntos">
+            <source src="recuerdos/WhatsApp%20Video%202026-11-04%20at%203.20.13%20PM.mp4" type="video/mp4" />
+            Tu navegador no puede reproducir este video.
+          </video>
+          <p class="memory-video-note">Los días pasan, pero estos momentos se quedan conmigo.</p>
+        </div>
+      </section>
+
+      <!-- Visor: permite ver las imágenes completas, sin recortes -->
+      <dialog id="memory-dialog" class="memory-dialog" aria-label="Fotografía ampliada">
+        <button id="memory-close" class="memory-close" type="button" aria-label="Cerrar foto">×</button>
+        <img id="memory-full-img" src="" alt="Fotografía ampliada de nuestros recuerdos" />
+        <div class="memory-dialog-controls">
+          <button id="memory-prev" type="button" aria-label="Ver foto anterior">← anterior</button>
+          <span id="memory-position" aria-live="polite">1 / 10</span>
+          <button id="memory-next" type="button" aria-label="Ver foto siguiente">siguiente →</button>
+        </div>
+      </dialog>
 
       <section class="moments" aria-labelledby="moments-heading">
         <div class="eyebrow">pequeños grandes motivos</div>
@@ -613,6 +721,35 @@ footer{padding-top:40px;font-size:10px}
       document.getElementById('final-message').classList.remove('hidden');
       document.getElementById('final-heart').textContent = '♥';
       petals(18);
+    });
+
+
+    // Galería interactiva de recuerdos: zoom y navegación sin alterar las fotografías.
+    const memoryThumbs = [...document.querySelectorAll('.memory-photo img')];
+    const memoryDialog = document.getElementById('memory-dialog');
+    const memoryFull = document.getElementById('memory-full-img');
+    const memoryPosition = document.getElementById('memory-position');
+    let memoryIndex = 0;
+    function showMemory(index) {
+      memoryIndex = (index + memoryThumbs.length) % memoryThumbs.length;
+      const thumbnail = memoryThumbs[memoryIndex];
+      memoryFull.src = thumbnail.getAttribute('src');
+      memoryFull.alt = thumbnail.alt;
+      memoryPosition.textContent = (memoryIndex + 1) + ' / ' + memoryThumbs.length;
+      if (!memoryDialog.open) memoryDialog.showModal();
+    }
+    document.querySelectorAll('.memory-photo').forEach((button, i) => {
+      button.addEventListener('click', () => showMemory(i));
+    });
+    document.getElementById('memory-close').addEventListener('click', () => memoryDialog.close());
+    document.getElementById('memory-prev').addEventListener('click', () => showMemory(memoryIndex - 1));
+    document.getElementById('memory-next').addEventListener('click', () => showMemory(memoryIndex + 1));
+    memoryDialog.addEventListener('click', event => {
+      if (event.target === memoryDialog) memoryDialog.close();
+    });
+    memoryDialog.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft') { event.preventDefault(); showMemory(memoryIndex - 1); }
+      if (event.key === 'ArrowRight') { event.preventDefault(); showMemory(memoryIndex + 1); }
     });
 
     function petals(count) {
