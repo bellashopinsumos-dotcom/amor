@@ -293,12 +293,9 @@ footer{padding-top:40px;font-size:10px}
 
 
 /* Acabado final: diseño equilibrado, orden visual y navegación */
-.gate-emblem{position:relative;display:grid;place-items:center;width:126px;height:126px;margin:11px auto 15px;
-border-radius:50%;background:radial-gradient(circle at 48% 40%,#fffefd 0 33%,#f4dce3 34% 66%,#fceff0 67% 100%);
-border:1px solid #eed5dc;box-shadow:0 14px 32px #783c5215}
-.gate-emblem::before,.gate-emblem::after{content:'✧';position:absolute;color:#b87890;font:20px Georgia,serif}
-.gate-emblem::before{top:12px;right:9px}.gate-emblem::after{bottom:17px;left:4px;font-size:14px}
-.gate-emblem span{font:71px/1 Georgia,serif;color:#ab5e7b;transform:translateY(-2px)}
+
+.flower-illustration{display:block;width:auto;height:136px;margin:8px auto 16px;filter:drop-shadow(0 14px 15px #69334b22);animation:sway 6s ease-in-out infinite;transform-origin:center bottom}
+@keyframes sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
 .gate-screen .eyebrow{margin-bottom:12px}
 .gate-screen .title{margin:10px auto 18px}
 .gate-screen .intro{max-width:420px}
@@ -333,8 +330,7 @@ box-shadow:0 6px 16px #783c5210;transition:background .2s,transform .2s,border .
 .chapter-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:5px 0 49px}
 .chapter-nav a{padding:11px 5px;font-size:11px}
 .chapter-nav a span{display:inline;margin:0 6px 0 0;font-size:16px}
-.gate-emblem{width:104px;height:104px;margin:8px auto 13px}
-.gate-emblem span{font-size:61px}
+.flower-illustration{height:120px;margin:6px auto 13px}
 .chapter-panel{padding:49px 18px 36px}
 #our-story{margin-bottom:53px}
 #letter-section .letter-paper{margin-bottom:65px}
@@ -348,6 +344,19 @@ box-shadow:0 6px 16px #783c5210;transition:background .2s,transform .2s,border .
 .chapter-nav a{transition:none}
 .chapter-nav a:hover,.chapter-nav a:focus-visible{transform:none}
 }
+
+/* Campo visible y táctil para ingresar la contraseña */
+.pin-wrap{width:min(100%,325px);display:flex;flex-direction:column;align-items:center}
+.pin-slots{width:100%;max-width:310px}
+.pin-input{position:relative;inset:auto;display:block;opacity:1;z-index:3;width:100%;height:55px;min-height:48px;margin-top:14px;
+background:#fffaf9;color:#69334b;border:1.5px solid #d6aabb;border-radius:12px;outline-offset:3px;cursor:text;
+font-size:22px;line-height:1.2;text-align:center;letter-spacing:.34em;font-weight:700;box-shadow:0 3px 12px #69334b10}
+.pin-input::placeholder{color:#cba8b5;opacity:1;letter-spacing:.34em;font-weight:400}
+.pin-input:focus{outline:3px solid #f3d6e2;border-color:#a45c7c}
+.pin-visible-label{display:block;width:100%;margin:17px 0 0;text-align:center;color:#7b5063;font-size:12px;font-weight:600;letter-spacing:.02em}
+@media(max-width:430px){.pin-input{height:53px;font-size:20px}}
+@media(prefers-reduced-motion:reduce){.flower-illustration{animation:none}}
+
 </style>
 </head>
 <body>
@@ -363,7 +372,18 @@ box-shadow:0 6px 16px #783c5210;transition:background .2s,transform .2s,border .
     <!-- PANTALLA 1: ELLA DEBE ADIVINAR LA CONTRASEÑA -->
     <section id="gate" class="gate-screen" aria-labelledby="gate-title">
       <div class="eyebrow">hoy celebramos lo nuestro</div>
-      <div class="gate-emblem" aria-hidden="true"><span>♡</span></div>
+      <svg class="flower-illustration" width="155" viewBox="0 0 155 128" role="img" aria-label="Decoración ilustrada">
+        <g fill="none" stroke="#789076" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M77 117C77 90 77 68 77 53"/>
+          <path d="M77 83Q52 66 48 83Q59 96 77 83Z" fill="#b8c1a3"/>
+          <path d="M78 92Q103 74 109 90Q94 102 78 92Z" fill="#cad2b8"/>
+        </g>
+        <g transform="translate(77 36) scale(1.17)">
+          <path d="M-25-6C-31-21-12-31 0-24C15-35 33-19 24-4C28 15 4 25-1 24C-16 22-31 12-25-6Z" fill="#d997a6"/>
+          <path d="M-19-6C-18-20-5-21 0-16C9-23 20-13 17-3C20 8 3 17-3 14C-13 13-20 4-19-6Z" fill="#bb7087"/>
+          <path d="M-8-8C-4-16 8-10 8-3C8 5-5 10-10 2C-12-2-9-6-4-4" stroke="#f0c1c7" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        </g>
+      </svg>
       <h1 id="gate-title" class="title">Otro mes a tu lado.<br>Y tantos momentos <em>por recordar.</em></h1>
       <p class="intro">Hoy quiero celebrar todo lo que hemos vivido desde que estamos juntos. Preparé este espacio para recordar nuestros momentos favoritos y seguir soñando con los que vienen. ♡</p>
 
@@ -381,7 +401,8 @@ box-shadow:0 6px 16px #783c5210;transition:background .2s,transform .2s,border .
               <span class="pin-slot"></span><span class="pin-slot"></span><span class="pin-slot"></span>
               <span class="pin-slot"></span><span class="pin-slot"></span><span class="pin-slot"></span>
             </div>
-            <input id="pin" class="pin-input" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="6" autocomplete="off" aria-label="Contraseña de seis números" spellcheck="false" required />
+            <label class="pin-visible-label" for="pin">Escribe aquí los seis números</label>
+            <input id="pin" class="pin-input" type="text" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="off" autocorrect="off" autocapitalize="off" aria-label="Contraseña de seis números" spellcheck="false" placeholder="••••••" required />
           </div>
           <button id="unlock" class="submit-btn" type="submit">Descubrir nuestro detalle <span aria-hidden="true">♡</span></button>
           <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
@@ -441,7 +462,7 @@ box-shadow:0 6px 16px #783c5210;transition:background .2s,transform .2s,border .
 
         <!-- ✏️ PERSONALIZACIÓN: CAMBIA AQUÍ EL TEXTO DE TU CARTA -->
         <article id="letter" class="letter-paper hidden">
-          <div class="paper-ornament" aria-hidden="true">♡</div>
+          <div class="paper-ornament" aria-hidden="true">✿</div>
           <h3>Para ti, mi amor ❤️</h3>
           <p>Feliz otro mes juntos, mi niña hermosa.</p>
           <p>No sé ni por dónde empezar, porque cuando me pongo a pensar en todo lo que hemos vivido, me doy cuenta de la cantidad de recuerdos tan bonitos que hemos construido y de lo feliz que me hace tenerte en mi vida.</p>
@@ -755,11 +776,11 @@ box-shadow:0 6px 16px #783c5210;transition:background .2s,transform .2s,border .
       'Deseo que, al pasar los meses, sigamos eligiéndonos con cariño, paciencia y muchas ganas.'
     ];
     const revealedWishes=new Set();
-    document.querySelectorAll('.wish-option').forEach(wish-option=>{
-      wish-option.addEventListener('click',()=>{
-        const idx=Number(wish-option.dataset.wish);
-        wish-option.classList.add('is-revealed');
-        wish-option.setAttribute('aria-pressed','true');
+    document.querySelectorAll('.wish-option').forEach(wishOption => {
+      wishOption.addEventListener('click', () => {
+        const idx = Number(wishOption.dataset.wish);
+        wishOption.classList.add('is-revealed');
+        wishOption.setAttribute('aria-pressed','true');
         revealedWishes.add(idx);
         document.getElementById('wishes-note').textContent=wishes[idx];
         document.getElementById('wishes-count').textContent=revealedWishes.size+' de 3 deseos descubiertos';
