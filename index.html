@@ -273,6 +273,25 @@ footer{padding-top:40px;font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){.memory-photo{transition:none}.memory-photo:hover,.memory-photo:focus-visible{transform:none}}
 
+
+/* Contador de tiempo juntos: cuatro bloques legibles también en celular */
+.together-clock{padding:45px 22px 43px;margin:55px -9px 16px;text-align:center;background:linear-gradient(155deg,#fffaf8,#f7e4e9);border:1px solid #edcfd5;border-radius:26px;box-shadow:0 16px 39px #753f5514}
+.together-clock .section-heading{font-size:clamp(31px,6vw,43px);margin:12px auto 14px}
+.together-since{font-size:13px;color:#906d7b;margin:0 auto 27px;letter-spacing:.01em}
+.together-since strong{color:#783d54;font-weight:700}
+.together-numbers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:0 auto;max-width:570px}
+.together-unit{min-width:0;padding:24px 5px 20px;border:1px solid #ead1d7;border-radius:13px;background:#fffaf9;box-shadow:0 8px 17px #743d5110}
+.together-value{display:block;font:400 clamp(24px,5.5vw,46px)/1.2 var(--serif);color:#8d4a63;font-variant-numeric:tabular-nums;white-space:nowrap}
+.together-label{display:block;font-size:10px;color:#9d7b85;text-transform:uppercase;letter-spacing:.08em;margin-top:12px}
+.together-note{font:italic 15px/1.75 var(--serif);color:#94697c;max-width:440px;margin:26px auto 0}
+@media(max-width:430px){
+ .together-clock{padding:35px 12px;margin-left:0;margin-right:0}
+ .together-numbers{gap:6px}
+ .together-unit{padding:18px 2px 15px;border-radius:10px}
+ .together-value{font-size:clamp(23px,6.6vw,30px)}
+ .together-label{font-size:9px;letter-spacing:0;margin-top:9px}
+}
+
 </style>
 </head>
 <body>
@@ -288,32 +307,20 @@ footer{padding-top:40px;font-size:10px}
     <!-- PANTALLA 1: ELLA DEBE ADIVINAR LA CONTRASEÑA -->
     <section id="gate" class="gate-screen" aria-labelledby="gate-title">
       <div class="eyebrow">hoy celebramos lo nuestro</div>
-      <svg class="flower-illustration" width="155" viewBox="0 0 155 128" role="img" aria-label="Ilustración de flores románticas">
-        <g fill="none" stroke="#789076" stroke-width="2.1" stroke-linecap="round">
-          <path d="M77 117C75 90 77 68 69 40M77 112C86 79 103 61 108 41M75 113C59 90 43 70 40 51"/>
-          <path d="M76 83Q57 69 55 85Q68 95 76 83Z" fill="#b8c1a3"/>
-          <path d="M82 92Q104 77 106 92Q91 103 82 92Z" fill="#b8c1a3"/>
-          <path d="M57 76Q39 68 41 83Q55 89 57 76Z" fill="#cad2b8"/>
+      <svg class="flower-illustration" width="155" viewBox="0 0 155 128" role="img" aria-label="Ilustración de una sola flor">
+        <g fill="none" stroke="#789076" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M77 117C77 90 77 68 77 53"/>
+          <path d="M77 83Q52 66 48 83Q59 96 77 83Z" fill="#b8c1a3"/>
+          <path d="M78 92Q103 74 109 90Q94 102 78 92Z" fill="#cad2b8"/>
         </g>
-        <g transform="translate(69 36)">
+        <g transform="translate(77 36) scale(1.17)">
           <path d="M-25-6C-31-21-12-31 0-24C15-35 33-19 24-4C28 15 4 25-1 24C-16 22-31 12-25-6Z" fill="#d997a6"/>
           <path d="M-19-6C-18-20-5-21 0-16C9-23 20-13 17-3C20 8 3 17-3 14C-13 13-20 4-19-6Z" fill="#bb7087"/>
           <path d="M-8-8C-4-16 8-10 8-3C8 5-5 10-10 2C-12-2-9-6-4-4" stroke="#f0c1c7" stroke-width="2.2" fill="none" stroke-linecap="round"/>
         </g>
-        <g transform="translate(110 37) scale(.67)">
-          <path d="M-25-6C-31-21-12-31 0-24C15-35 33-19 24-4C28 15 4 25-1 24C-16 22-31 12-25-6Z" fill="#eac2bd"/>
-          <path d="M-19-6C-18-20-5-21 0-16C9-23 20-13 17-3C20 8 3 17-3 14C-13 13-20 4-19-6Z" fill="#d99c9a"/>
-          <path d="M-8-8C-4-16 8-10 8-3C8 5-5 10-10 2C-12-2-9-6-4-4" stroke="#fce2d8" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-        </g>
-        <g transform="translate(41 49) scale(.57)">
-          <path d="M-25-6C-31-21-12-31 0-24C15-35 33-19 24-4C28 15 4 25-1 24C-16 22-31 12-25-6Z" fill="#eac4cb"/>
-          <path d="M-19-6C-18-20-5-21 0-16C9-23 20-13 17-3C20 8 3 17-3 14C-13 13-20 4-19-6Z" fill="#d49aaa"/>
-          <path d="M-8-8C-4-16 8-10 8-3C8 5-5 10-10 2C-12-2-9-6-4-4" stroke="#fce5e9" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-        </g>
-        <path d="M57 114Q77 123 99 114" fill="none" stroke="#c7939e" stroke-width="4" stroke-linecap="round"/>
       </svg>
       <h1 id="gate-title" class="title">Otro mes a tu lado.<br>Y tantos momentos <em>por recordar.</em></h1>
-      <p class="intro">Estas flores son solo una parte de lo que preparé para celebrar otro mes juntos. Porque lo más especial no es el regalo, sino todo lo que hemos vivido y seguimos construyendo. ♡</p>
+      <p class="intro">Esta flor es un pequeño detalle para celebrar otro mes juntos. Pero lo más especial no es lo que te entrego hoy, sino cada momento que hemos compartido y todo lo que nos falta por vivir. ♡</p>
 
       <div class="lock-card" id="lock-card">
         <div class="lock-symbol" aria-hidden="true">
@@ -493,15 +500,15 @@ footer{padding-top:40px;font-size:10px}
 
       
       <section class="garden" aria-labelledby="garden-heading">
-        <div class="eyebrow">flores que no se marchitan</div>
-        <h2 id="garden-heading" class="section-heading">Te traje un ramo…<br><span class="serif-em">y también tres deseos.</span></h2>
-        <p class="section-body">Estas flores no están hechas de pétalos. Están hechas de cosas que quiero seguir viviendo contigo. Tócalas una por una.</p>
+        <div class="eyebrow">tres deseos para nosotros</div>
+        <h2 id="garden-heading" class="section-heading">Una flor para ti…<br><span class="serif-em">y tres deseos para nosotros.</span></h2>
+        <p class="section-body">La flor es un detalle de hoy; estos tres deseos son para todo lo que quiero seguir viviendo contigo. Toca cada símbolo para descubrirlos.</p>
         <div class="garden-buds" role="group" aria-label="Tres deseos por descubrir">
-          <button class="bud" type="button" data-wish="0" aria-label="Descubrir primer deseo" aria-pressed="false"><span class="bud-flower" aria-hidden="true">✿</span><span class="bud-label">un deseo</span></button>
-          <button class="bud" type="button" data-wish="1" aria-label="Descubrir segundo deseo" aria-pressed="false"><span class="bud-flower" aria-hidden="true">❀</span><span class="bud-label">otro deseo</span></button>
-          <button class="bud" type="button" data-wish="2" aria-label="Descubrir tercer deseo" aria-pressed="false"><span class="bud-flower" aria-hidden="true">✿</span><span class="bud-label">y uno más</span></button>
+          <button class="bud" type="button" data-wish="0" aria-label="Descubrir primer deseo" aria-pressed="false"><span class="bud-flower" aria-hidden="true">♡</span><span class="bud-label">un deseo</span></button>
+          <button class="bud" type="button" data-wish="1" aria-label="Descubrir segundo deseo" aria-pressed="false"><span class="bud-flower" aria-hidden="true">✧</span><span class="bud-label">otro deseo</span></button>
+          <button class="bud" type="button" data-wish="2" aria-label="Descubrir tercer deseo" aria-pressed="false"><span class="bud-flower" aria-hidden="true">♡</span><span class="bud-label">y uno más</span></button>
         </div>
-        <p class="garden-note" id="garden-note" aria-live="polite">«Elige una flor y descubre lo que guardé en ella»</p>
+        <p class="garden-note" id="garden-note" aria-live="polite">«Toca un símbolo y descubre uno de mis deseos»</p>
         <p class="garden-count" id="garden-count">0 de 3 deseos descubiertos</p>
         <p class="garden-keeper hidden" id="garden-keeper">Listo. Ya conoces los tres deseos que quiero cuidar contigo. ♡</p>
       </section>
@@ -513,6 +520,20 @@ footer{padding-top:40px;font-size:10px}
         <div class="final-heart-row" aria-hidden="true">♡ ✧ ♡</div><button id="final-heart" class="finale-heart" type="button" aria-label="Descubrir el último mensaje">♡</button>
         <p id="final-message" class="finale-result hidden" role="status">Gracias por otro mes lleno de momentos nuestros. Por las risas, las aventuras, tu compañía y por hacer especiales incluso los días más sencillos. Te amo muchísimo. ❤️</p>
         <p class="final-quote">Un mes más no es solo una fecha.<br>Es todo lo que hemos vivido y todo lo que aún quiero compartir contigo.</p><p class="last-note">Feliz otro mes juntos, mi amor. Esto apenas continúa…</p><p class="finale-love">con todo mi corazón ♡</p>
+      </section>
+
+      <!-- TIEMPO JUNTOS: desde el 6 de junio de 2026, 00:00 hora de Colombia -->
+      <section id="together-clock" class="together-clock" aria-labelledby="together-clock-heading">
+        <div class="eyebrow">nuestra historia sigue sumando</div>
+        <h2 id="together-clock-heading" class="section-heading">El tiempo que llevamos<br><span class="serif-em">eligiéndonos.</span></h2>
+        <p class="together-since">Desde el <strong>6 de junio de 2026</strong></p>
+        <div class="together-numbers" role="group" aria-label="Tiempo transcurrido juntos desde el 6 de junio de 2026">
+          <div class="together-unit"><span class="together-value" id="together-days">0</span><span class="together-label">días</span></div>
+          <div class="together-unit"><span class="together-value" id="together-hours">00</span><span class="together-label">horas</span></div>
+          <div class="together-unit"><span class="together-value" id="together-minutes">00</span><span class="together-label">minutos</span></div>
+          <div class="together-unit"><span class="together-value" id="together-seconds">00</span><span class="together-label">segundos</span></div>
+        </div>
+        <p class="together-note">Y cada segundo es una razón más para agradecer que estamos juntos. ♡</p>
       </section>
     </div>
     <footer>Una pequeña página, un amor muy grande <span>♡</span></footer>
@@ -626,7 +647,7 @@ footer{padding-top:40px;font-size:10px}
     const hintPrompts = [
       'Primera pista: son seis números. Ninguna letra, ninguna palabra. Solo seis pequeños secretos.',
       'Segunda pista: piensa en algo que tenga un significado especial para nosotros.',
-      'Última pista: la respuesta no está en las flores. Está en lo que tú recuerdes y en lo que quieras probar. ♡'
+      'Última pista: la respuesta no está en esta flor. Está en algo que tiene significado para nosotros. ♡'
     ];
     let hintStep=0;
     const newHintBtn=document.getElementById('hint-btn');
@@ -680,16 +701,16 @@ footer{padding-top:40px;font-size:10px}
       'Deseo que sigamos descubriendo lugares, historias y versiones bonitas de nosotros.',
       'Deseo que, al pasar los meses, sigamos eligiéndonos con cariño, paciencia y muchas ganas.'
     ];
-    const flowers=new Set();
+    const revealedWishes=new Set();
     document.querySelectorAll('.bud').forEach(bud=>{
       bud.addEventListener('click',()=>{
         const idx=Number(bud.dataset.wish);
         bud.classList.add('is-picked');
         bud.setAttribute('aria-pressed','true');
-        flowers.add(idx);
+        revealedWishes.add(idx);
         document.getElementById('garden-note').textContent=wishes[idx];
-        document.getElementById('garden-count').textContent=flowers.size+' de 3 deseos descubiertos';
-        if(flowers.size===3) {
+        document.getElementById('garden-count').textContent=revealedWishes.size+' de 3 deseos descubiertos';
+        if(revealedWishes.size===3) {
           document.getElementById('garden-keeper').classList.remove('hidden');
           petals(10);
         }
@@ -752,9 +773,38 @@ footer{padding-top:40px;font-size:10px}
       if (event.key === 'ArrowRight') { event.preventDefault(); showMemory(memoryIndex + 1); }
     });
 
+
+    // Hora de inicio: 6 de junio de 2026 a las 00:00 (Colombia, UTC-05:00).
+    // Se calcula con la fecha actual del dispositivo, sin importar su zona horaria.
+    const relationshipStartedAt = Date.parse('2026-06-06T00:00:00-05:00');
+    const clockElements = {
+      days: document.getElementById('together-days'),
+      hours: document.getElementById('together-hours'),
+      minutes: document.getElementById('together-minutes'),
+      seconds: document.getElementById('together-seconds')
+    };
+    function renderTogetherClock() {
+      let secondsElapsed = Math.max(0, Math.floor((Date.now() - relationshipStartedAt) / 1000));
+      const days = Math.floor(secondsElapsed / 86400);
+      secondsElapsed %= 86400;
+      const hours = Math.floor(secondsElapsed / 3600);
+      secondsElapsed %= 3600;
+      const minutes = Math.floor(secondsElapsed / 60);
+      const seconds = secondsElapsed % 60;
+      clockElements.days.textContent = String(days);
+      clockElements.hours.textContent = String(hours).padStart(2, '0');
+      clockElements.minutes.textContent = String(minutes).padStart(2, '0');
+      clockElements.seconds.textContent = String(seconds).padStart(2, '0');
+    }
+    renderTogetherClock();
+    window.setInterval(renderTogetherClock, 1000);
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) renderTogetherClock();
+    });
+
     function petals(count) {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const shapes = ['♥','♡','✿','✧'];
+      const shapes = ['♥','♡','✧','♡'];
       for (let i = 0; i < count; i++) {
         const el = document.createElement('span');
         el.className = 'petal';
