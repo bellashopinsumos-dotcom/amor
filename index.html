@@ -43,8 +43,7 @@
     .gate-screen{min-height:calc(100vh - 210px);display:flex;align-items:center;justify-content:center;flex-direction:column}
     .eyebrow{display:flex;align-items:center;justify-content:center;gap:12px;font-size:10px;font-weight:700;letter-spacing:.27em;text-transform:uppercase;color:var(--gold)}
     .eyebrow::before,.eyebrow::after{content:'';width:31px;height:1px;background:#cbae99}
-    .flower-illustration{height:128px;margin:4px 0 9px;filter:drop-shadow(0 14px 12px rgba(146,66,84,.1));animation:sway 6s ease-in-out infinite;transform-origin:center bottom}
-    @keyframes sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+    
     .title{text-align:center;font-family:var(--serif);font-weight:400;font-size:clamp(36px,7.5vw,52px);letter-spacing:-.045em;line-height:1.25;margin:6px 0 17px}
     .title em,.serif-em{font-style:italic;color:#a95e77}
     .intro{text-align:center;color:#88727b;font-size:13px;line-height:1.9;max-width:350px;margin:0 auto 34px}
@@ -111,7 +110,7 @@
     .envelope-label{font-size:11px;color:#99737e;letter-spacing:.12em;text-transform:uppercase}
     .letter-paper{background:var(--paper);border:1px solid #f2dfdc;border-radius:10px;padding:38px 32px 39px;box-shadow:var(--shadow);position:relative;margin:15px 0 52px;animation:arrive .85s ease both}
     .letter-paper::before{content:'';position:absolute;inset:9px;border:1px solid #f2e6e2;border-radius:6px;pointer-events:none}
-    .paper-flower{font:29px Georgia,serif;color:#bd8796;text-align:center;margin-bottom:17px}
+    .paper-ornament{font:29px Georgia,serif;color:#bd8796;text-align:center;margin-bottom:17px}
     .letter-paper h3{font-family:var(--serif);font-size:28px;font-style:italic;font-weight:400;margin:0 0 21px}
     .letter-paper p{font-family:var(--serif);font-size:15px;line-height:2.1;color:#62444f;margin:0 0 17px}
     .letter-paper .signoff{text-align:right;margin:24px 0 0;font-style:italic;color:#9c5a70}
@@ -130,8 +129,8 @@
     .finale-heart:active{transform:scale(.92)}
     .finale-result{font-family:var(--serif);font-style:italic;font-size:21px;color:#99536a;max-width:380px;line-height:1.6;margin:13px auto;animation:arrive .65s ease both}
     .last-note{font-size:12px;color:#947e86;line-height:1.8}
-    .petal{position:fixed;top:-40px;left:var(--left);font-size:var(--size);color:#b96c83;pointer-events:none;z-index:20;animation:petalfall var(--dur) linear forwards;opacity:.8}
-    @keyframes petalfall{0%{transform:translate(0,-10px) rotate(0);opacity:0}10%{opacity:.9}100%{transform:translate(var(--drift),110vh) rotate(620deg);opacity:0}}
+    .sparkle{position:fixed;top:-40px;left:var(--left);font-size:var(--size);color:#b96c83;pointer-events:none;z-index:20;animation:sparklefall var(--dur) linear forwards;opacity:.8}
+    @keyframes sparklefall{0%{transform:translate(0,-10px) rotate(0);opacity:0}10%{opacity:.9}100%{transform:translate(var(--drift),110vh) rotate(620deg);opacity:0}}
     @media(min-width:650px){.layout{padding-top:36px}.topbar{margin-bottom:58px}.gate-screen{min-height:calc(100vh - 220px)}.lock-card{padding:38px 40px 34px}.letter-paper{padding:51px 48px 48px}}
     @media(max-width:370px){.layout{padding-inline:15px}.topbar{margin-bottom:27px}.title{font-size:35px}.lock-card{padding:26px 17px}.pin-slots{gap:6px}.pin-slot{height:47px}.tiny-pill{font-size:9px;padding:8px}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
@@ -148,7 +147,7 @@ body{background:
 .gate-screen{padding:32px 0 70px;min-height:calc(100svh - 125px)}
 .title{font-size:clamp(39px,7vw,61px);line-height:1.13;letter-spacing:-.058em;max-width:650px}
 .intro{max-width:410px;font-size:14px;line-height:1.86;margin-bottom:31px}
-.flower-illustration{height:151px;margin:9px 0 15px;filter:drop-shadow(0 16px 14px #69334b20)}
+
 .lock-card{width:min(100%,430px);border-radius:22px;background:linear-gradient(150deg,#fffefd 10%,#fff7f4 100%);border:1px solid #fff;box-shadow:0 24px 60px rgba(102,49,74,.16);padding:36px 30px}
 .card-title{font-size:26px}
 .card-sub{font-size:13px}
@@ -195,19 +194,19 @@ body{background:
 .moments .section-heading{font-size:clamp(33px,6vw,43px)}
 .moment{border-radius:15px;box-shadow:0 9px 21px #7c465112}
 .moment.is-flipped{background:#fff5f2;border-color:#d5a5ae}
-.garden{margin:15px -9px 78px;padding:45px 17px 38px;border:1px solid #edcfd0;border-radius:27px;
+.wishes-panel{margin:15px -9px 78px;padding:45px 17px 38px;border:1px solid #edcfd0;border-radius:27px;
  background:linear-gradient(170deg,#fffbf9,#f7e3e5);text-align:center;box-shadow:0 14px 44px #86435d16}
-.garden .section-heading{font-size:clamp(32px,6vw,44px);margin-bottom:14px}
-.garden-buds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:435px;margin:28px auto 16px}
-.bud{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;border:1px solid #edd1d3;
+.wishes-panel .section-heading{font-size:clamp(32px,6vw,44px);margin-bottom:14px}
+.wish-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:435px;margin:28px auto 16px}
+.wish-option{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;border:1px solid #edd1d3;
  background:#fffbf9;border-radius:18px;padding:21px 5px 16px;min-height:131px;color:#874e65;box-shadow:0 12px 22px #a96c7a12;transition:transform .2s,background .3s}
-.bud:hover,.bud.is-picked{transform:translateY(-3px);background:#fcecef;border-color:#d7a8b6}
-.bud-flower{font:44px Georgia,serif;color:#bf718b;line-height:1;transition:transform .4s}
-.bud.is-picked .bud-flower{transform:rotate(-15deg) scale(1.12)}
-.bud-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase}
-.garden-note{font:italic 19px/1.6 var(--serif);color:#8f526c;max-width:450px;min-height:61px;margin:22px auto 4px;padding:0 8px;animation:arrive .5s ease}
-.garden-count{font-size:11px;color:#9e7888}
-.garden-keeper{font:italic 15px var(--serif);color:#9a5570;margin:13px auto 0}
+.wish-option:hover,.wish-option.is-revealed{transform:translateY(-3px);background:#fcecef;border-color:#d7a8b6}
+.wish-symbol{font:44px Georgia,serif;color:#bf718b;line-height:1;transition:transform .4s}
+.wish-option.is-revealed .wish-symbol{transform:rotate(-15deg) scale(1.12)}
+.wish-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.wishes-note{font:italic 19px/1.6 var(--serif);color:#8f526c;max-width:450px;min-height:61px;margin:22px auto 4px;padding:0 8px;animation:arrive .5s ease}
+.wishes-count{font-size:11px;color:#9e7888}
+.wishes-keeper{font:italic 15px var(--serif);color:#9a5570;margin:13px auto 0}
 .finale{padding:52px 23px 40px;margin:0 -9px 0;border-radius:27px;
  background:radial-gradient(circle at 50% 50%,#fdfafa,#f9eaeb 65%,#f2d8de);border:1px solid #f0d8db;box-shadow:0 14px 40px #86435d13}
 .finale .section-heading{font-size:clamp(35px,6vw,46px)}
@@ -221,22 +220,22 @@ footer{padding-top:40px;font-size:10px}
 @media (max-width:430px) {
  .layout{padding-inline:16px}
  .topbar{margin-bottom:12px}
- .flower-illustration{height:128px}
+
  .gate-screen{padding-top:27px}
  .title{font-size:38px}
  .lock-card{padding:27px 19px}
  .pin-slots{gap:7px}
  .pin-slot{height:52px}
- .chapter-panel,.garden,.finale{margin-left:0;margin-right:0}
+ .chapter-panel,.wishes-panel,.finale{margin-left:0;margin-right:0}
  .chapter-panel{padding-inline:20px}
  .chapter-title{font-size:36px}
  .chapter-story-text{font-size:20px}
- .bud{min-height:117px;padding:16px 3px}
- .bud-flower{font-size:38px}
+ .wish-option{min-height:117px;padding:16px 3px}
+ .wish-symbol{font-size:38px}
  .letter-paper{padding:37px 24px}
 }
 @media(prefers-reduced-motion:reduce){
- .chapter-story-text,.bud,.bud-flower,.finale-heart{animation:none;transition:none}
+ .chapter-story-text,.wish-option,.wish-symbol,.finale-heart{animation:none;transition:none}
 }
 
 
@@ -292,6 +291,63 @@ footer{padding-top:40px;font-size:10px}
  .together-label{font-size:9px;letter-spacing:0;margin-top:9px}
 }
 
+
+/* Acabado final: diseño equilibrado, orden visual y navegación */
+.gate-emblem{position:relative;display:grid;place-items:center;width:126px;height:126px;margin:11px auto 15px;
+border-radius:50%;background:radial-gradient(circle at 48% 40%,#fffefd 0 33%,#f4dce3 34% 66%,#fceff0 67% 100%);
+border:1px solid #eed5dc;box-shadow:0 14px 32px #783c5215}
+.gate-emblem::before,.gate-emblem::after{content:'✧';position:absolute;color:#b87890;font:20px Georgia,serif}
+.gate-emblem::before{top:12px;right:9px}.gate-emblem::after{bottom:17px;left:4px;font-size:14px}
+.gate-emblem span{font:71px/1 Georgia,serif;color:#ab5e7b;transform:translateY(-2px)}
+.gate-screen .eyebrow{margin-bottom:12px}
+.gate-screen .title{margin:10px auto 18px}
+.gate-screen .intro{max-width:420px}
+.paper-ornament{font:30px Georgia,serif;color:#b57489;text-align:center;margin-bottom:15px}
+.chapter-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;max-width:630px;margin:-8px auto 59px}
+.chapter-nav a{text-decoration:none;text-align:center;font-size:11px;line-height:1.4;color:#815369;
+border:1px solid #e7cbd3;background:#fffaf9cc;border-radius:12px;padding:13px 6px;
+box-shadow:0 6px 16px #783c5210;transition:background .2s,transform .2s,border .2s}
+.chapter-nav a span{display:block;font:italic 19px var(--serif);color:#b17b8c;margin-bottom:5px}
+.chapter-nav a:hover,.chapter-nav a:focus-visible{background:#f9e6ec;border-color:#cf98ac;transform:translateY(-2px)}
+#our-story,#letter-section,#memory-gallery,#our-messages,#our-wishes,#together-clock{scroll-margin-top:23px}
+#our-story{margin:0 auto 65px}
+.section-rule{margin:5px auto 53px}
+#letter-section{padding-top:7px}
+#letter-section .envelope-scene{padding-bottom:20px}
+#letter-section .letter-paper{margin-bottom:78px}
+.memories{padding-top:3px;margin-bottom:77px}
+.memories .memory-grid{margin-top:29px}
+.moments{padding-top:16px;margin-bottom:67px}
+.moments .moment-grid{margin-bottom:0}
+.wishes-panel{margin:0 auto 72px;padding:46px 25px 41px}
+.wishes-panel .section-heading{margin-top:9px}
+.wish-options{margin-top:25px}
+.wish-option{min-height:123px}
+.wish-symbol{font-size:37px}
+.wishes-note{margin-top:21px}
+.finale{margin:0 auto 58px;padding:49px 25px 43px}
+.together-clock{margin:0 auto 16px}
+.section-heading{max-width:640px}
+.section-body{max-width:440px}
+@media(max-width:540px){
+.chapter-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:5px 0 49px}
+.chapter-nav a{padding:11px 5px;font-size:11px}
+.chapter-nav a span{display:inline;margin:0 6px 0 0;font-size:16px}
+.gate-emblem{width:104px;height:104px;margin:8px auto 13px}
+.gate-emblem span{font-size:61px}
+.chapter-panel{padding:49px 18px 36px}
+#our-story{margin-bottom:53px}
+#letter-section .letter-paper{margin-bottom:65px}
+.memories{margin-bottom:60px}
+.moments{margin-bottom:57px}
+.wishes-panel{padding:38px 15px 34px;margin-bottom:58px}
+.wish-option{min-height:111px}
+.finale{margin-bottom:47px}
+}
+@media(prefers-reduced-motion:reduce){
+.chapter-nav a{transition:none}
+.chapter-nav a:hover,.chapter-nav a:focus-visible{transform:none}
+}
 </style>
 </head>
 <body>
@@ -307,20 +363,9 @@ footer{padding-top:40px;font-size:10px}
     <!-- PANTALLA 1: ELLA DEBE ADIVINAR LA CONTRASEÑA -->
     <section id="gate" class="gate-screen" aria-labelledby="gate-title">
       <div class="eyebrow">hoy celebramos lo nuestro</div>
-      <svg class="flower-illustration" width="155" viewBox="0 0 155 128" role="img" aria-label="Ilustración de una sola flor">
-        <g fill="none" stroke="#789076" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M77 117C77 90 77 68 77 53"/>
-          <path d="M77 83Q52 66 48 83Q59 96 77 83Z" fill="#b8c1a3"/>
-          <path d="M78 92Q103 74 109 90Q94 102 78 92Z" fill="#cad2b8"/>
-        </g>
-        <g transform="translate(77 36) scale(1.17)">
-          <path d="M-25-6C-31-21-12-31 0-24C15-35 33-19 24-4C28 15 4 25-1 24C-16 22-31 12-25-6Z" fill="#d997a6"/>
-          <path d="M-19-6C-18-20-5-21 0-16C9-23 20-13 17-3C20 8 3 17-3 14C-13 13-20 4-19-6Z" fill="#bb7087"/>
-          <path d="M-8-8C-4-16 8-10 8-3C8 5-5 10-10 2C-12-2-9-6-4-4" stroke="#f0c1c7" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-        </g>
-      </svg>
+      <div class="gate-emblem" aria-hidden="true"><span>♡</span></div>
       <h1 id="gate-title" class="title">Otro mes a tu lado.<br>Y tantos momentos <em>por recordar.</em></h1>
-      <p class="intro">Esta flor es un pequeño detalle para celebrar otro mes juntos. Pero lo más especial no es lo que te entrego hoy, sino cada momento que hemos compartido y todo lo que nos falta por vivir. ♡</p>
+      <p class="intro">Hoy quiero celebrar todo lo que hemos vivido desde que estamos juntos. Preparé este espacio para recordar nuestros momentos favoritos y seguir soñando con los que vienen. ♡</p>
 
       <div class="lock-card" id="lock-card">
         <div class="lock-symbol" aria-hidden="true">
@@ -357,10 +402,18 @@ footer{padding-top:40px;font-size:10px}
         <p class="hero-ornament">Qué bonito seguir coleccionando momentos contigo…</p><div class="scroll-cue">desliza para descubrir lo que sigue <b aria-hidden="true">⌄</b></div>
       </section>
 
-      <section class="chapter-panel" aria-labelledby="chapter-heading">
+
+      <nav class="chapter-nav" aria-label="Secciones de nuestra historia">
+        <a href="#our-story"><span>01</span> Nuestra historia</a>
+        <a href="#letter-section"><span>02</span> La carta</a>
+        <a href="#memory-gallery"><span>03</span> Recuerdos</a>
+        <a href="#together-clock"><span>04</span> Nuestro tiempo</a>
+      </nav>
+
+      <section id="our-story" class="chapter-panel" aria-labelledby="chapter-heading">
         <p class="chapter-kicker">un mes más para recordar</p>
         <h2 class="chapter-title" id="chapter-heading">Lo que hemos vivido,<br><em>lo que seguimos construyendo.</em></h2>
-        <p class="chapter-copy">Este mes es otra oportunidad para agradecer nuestros recuerdos. Toca cada número y volvamos por un momento a tres cosas que me hacen feliz de nosotros.</p>
+        <p class="chapter-copy">Tres recuerdos, entre tantos otros, que siempre me van a hacer sonreír. Toca cada número para descubrirlos.</p>
         <div class="chapter-timeline" role="group" aria-label="Capítulos de nuestra historia">
           <button class="chapter-node" data-chapter="0" aria-pressed="true" type="button" aria-label="Capítulo uno">I</button><span class="chapter-line" aria-hidden="true"></span>
           <button class="chapter-node" data-chapter="1" aria-pressed="false" type="button" aria-label="Capítulo dos">II</button><span class="chapter-line" aria-hidden="true"></span>
@@ -388,7 +441,7 @@ footer{padding-top:40px;font-size:10px}
 
         <!-- ✏️ PERSONALIZACIÓN: CAMBIA AQUÍ EL TEXTO DE TU CARTA -->
         <article id="letter" class="letter-paper hidden">
-          <div class="paper-flower" aria-hidden="true">✿</div>
+          <div class="paper-ornament" aria-hidden="true">♡</div>
           <h3>Para ti, mi amor ❤️</h3>
           <p>Feliz otro mes juntos, mi niña hermosa.</p>
           <p>No sé ni por dónde empezar, porque cuando me pongo a pensar en todo lo que hemos vivido, me doy cuenta de la cantidad de recuerdos tan bonitos que hemos construido y de lo feliz que me hace tenerte en mi vida.</p>
@@ -410,9 +463,9 @@ footer{padding-top:40px;font-size:10px}
 
       <!-- GALERÍA DE NUESTROS RECUERDOS: fotos originales en la carpeta recuerdos/ -->
       <section id="memory-gallery" class="memories" aria-labelledby="memories-heading">
-        <div class="eyebrow">instantes que guardo contigo</div>
+        <div class="eyebrow">nuestros momentos</div>
         <h2 id="memories-heading" class="section-heading">Nuestra historia<br><span class="serif-em">en fotografías.</span></h2>
-        <p class="section-body">Me encanta saber que detrás de cada foto hay un momento nuestro. Y que todavía nos quedan tantos por vivir.</p>
+        <p class="section-body">Diez momentos que guardo con cariño y uno que podemos volver a ver juntos.</p>
         <div class="memory-grid" aria-label="Galería de 10 fotografías de nuestros recuerdos">
           
           <button class="memory-photo" type="button" data-memory-index="0" aria-label="Ampliar fotografía 1 de 10">
@@ -481,10 +534,10 @@ footer{padding-top:40px;font-size:10px}
         </div>
       </dialog>
 
-      <section class="moments" aria-labelledby="moments-heading">
-        <div class="eyebrow">pequeños grandes motivos</div>
-        <h2 id="moments-heading" class="section-heading">Tres razones para<br><span class="serif-em">celebrar este mes</span></h2>
-        <p class="section-body">Porque lo más valioso de estar juntos no se mide en días, sino en todo lo que compartimos.</p>
+      <section id="our-messages" class="moments" aria-labelledby="moments-heading">
+        <div class="eyebrow">lo que me gusta de nosotros</div>
+        <h2 id="moments-heading" class="section-heading">Lo especial de<br><span class="serif-em">nuestros días.</span></h2>
+        <p class="section-body">No son solo los planes grandes. También son todas esas cosas pequeñas que me encanta vivir contigo.</p>
         <div class="moment-grid">
           <button class="moment" type="button" data-title="Nuestros recuerdos" data-reveal="Me encanta pensar en todos los lugares, risas y pequeñas historias que este tiempo nos ha regalado.">
             <span class="moment-number">01</span><span class="moment-text">Nuestros recuerdos<small>Toca para descubrir mi mensaje</small></span><span class="moment-arrow" aria-hidden="true">♡</span>
@@ -499,18 +552,18 @@ footer{padding-top:40px;font-size:10px}
       </section>
 
       
-      <section class="garden" aria-labelledby="garden-heading">
-        <div class="eyebrow">tres deseos para nosotros</div>
-        <h2 id="garden-heading" class="section-heading">Una flor para ti…<br><span class="serif-em">y tres deseos para nosotros.</span></h2>
-        <p class="section-body">La flor es un detalle de hoy; estos tres deseos son para todo lo que quiero seguir viviendo contigo. Toca cada símbolo para descubrirlos.</p>
-        <div class="garden-buds" role="group" aria-label="Tres deseos por descubrir">
-          <button class="bud" type="button" data-wish="0" aria-label="Descubrir primer deseo" aria-pressed="false"><span class="bud-flower" aria-hidden="true">♡</span><span class="bud-label">un deseo</span></button>
-          <button class="bud" type="button" data-wish="1" aria-label="Descubrir segundo deseo" aria-pressed="false"><span class="bud-flower" aria-hidden="true">✧</span><span class="bud-label">otro deseo</span></button>
-          <button class="bud" type="button" data-wish="2" aria-label="Descubrir tercer deseo" aria-pressed="false"><span class="bud-flower" aria-hidden="true">♡</span><span class="bud-label">y uno más</span></button>
+      <section id="our-wishes" class="wishes-panel" aria-labelledby="wishes-heading">
+        <div class="eyebrow">lo que deseo para nosotros</div>
+        <h2 id="wishes-heading" class="section-heading">Tres deseos<br><span class="serif-em">para los dos.</span></h2>
+        <p class="section-body">Hay cosas que quiero seguir viviendo a tu lado. Toca cada símbolo para descubrir lo que deseo para nosotros.</p>
+        <div class="wish-options" role="group" aria-label="Tres deseos por descubrir">
+          <button class="wish-option" type="button" data-wish="0" aria-label="Descubrir primer deseo" aria-pressed="false"><span class="wish-symbol" aria-hidden="true">♡</span><span class="wish-label">un deseo</span></button>
+          <button class="wish-option" type="button" data-wish="1" aria-label="Descubrir segundo deseo" aria-pressed="false"><span class="wish-symbol" aria-hidden="true">✧</span><span class="wish-label">otro deseo</span></button>
+          <button class="wish-option" type="button" data-wish="2" aria-label="Descubrir tercer deseo" aria-pressed="false"><span class="wish-symbol" aria-hidden="true">♡</span><span class="wish-label">y uno más</span></button>
         </div>
-        <p class="garden-note" id="garden-note" aria-live="polite">«Toca un símbolo y descubre uno de mis deseos»</p>
-        <p class="garden-count" id="garden-count">0 de 3 deseos descubiertos</p>
-        <p class="garden-keeper hidden" id="garden-keeper">Listo. Ya conoces los tres deseos que quiero cuidar contigo. ♡</p>
+        <p class="wishes-note" id="wishes-note" aria-live="polite">«Toca un símbolo y descubre uno de mis deseos»</p>
+        <p class="wishes-count" id="wishes-count">0 de 3 deseos descubiertos</p>
+        <p class="wishes-keeper hidden" id="wishes-keeper">Listo. Ya conoces los tres deseos que quiero cuidar contigo. ♡</p>
       </section>
 
       <section class="finale" aria-labelledby="finale-heading">
@@ -624,7 +677,7 @@ footer{padding-top:40px;font-size:10px}
             window.scrollTo({top: 0, behavior: 'instant'});
             document.getElementById('hero-heading').setAttribute('tabindex', '-1');
             document.getElementById('hero-heading').focus({preventScroll:true});
-            petals(24);
+            sparkles(24);
           }, 650);
         } else {
           feedback.textContent = 'Todavía no es la clave. Inténtalo otra vez. ♡';
@@ -647,7 +700,7 @@ footer{padding-top:40px;font-size:10px}
     const hintPrompts = [
       'Primera pista: son seis números. Ninguna letra, ninguna palabra. Solo seis pequeños secretos.',
       'Segunda pista: piensa en algo que tenga un significado especial para nosotros.',
-      'Última pista: la respuesta no está en esta flor. Está en algo que tiene significado para nosotros. ♡'
+      'Última pista: piensa en una fecha o un recuerdo que tenga un significado especial para los dos. ♡'
     ];
     let hintStep=0;
     const newHintBtn=document.getElementById('hint-btn');
@@ -702,17 +755,17 @@ footer{padding-top:40px;font-size:10px}
       'Deseo que, al pasar los meses, sigamos eligiéndonos con cariño, paciencia y muchas ganas.'
     ];
     const revealedWishes=new Set();
-    document.querySelectorAll('.bud').forEach(bud=>{
-      bud.addEventListener('click',()=>{
-        const idx=Number(bud.dataset.wish);
-        bud.classList.add('is-picked');
-        bud.setAttribute('aria-pressed','true');
+    document.querySelectorAll('.wish-option').forEach(wish-option=>{
+      wish-option.addEventListener('click',()=>{
+        const idx=Number(wish-option.dataset.wish);
+        wish-option.classList.add('is-revealed');
+        wish-option.setAttribute('aria-pressed','true');
         revealedWishes.add(idx);
-        document.getElementById('garden-note').textContent=wishes[idx];
-        document.getElementById('garden-count').textContent=revealedWishes.size+' de 3 deseos descubiertos';
+        document.getElementById('wishes-note').textContent=wishes[idx];
+        document.getElementById('wishes-count').textContent=revealedWishes.size+' de 3 deseos descubiertos';
         if(revealedWishes.size===3) {
-          document.getElementById('garden-keeper').classList.remove('hidden');
-          petals(10);
+          document.getElementById('wishes-keeper').classList.remove('hidden');
+          sparkles(10);
         }
       });
     });
@@ -741,7 +794,7 @@ footer{padding-top:40px;font-size:10px}
     document.getElementById('final-heart').addEventListener('click', () => {
       document.getElementById('final-message').classList.remove('hidden');
       document.getElementById('final-heart').textContent = '♥';
-      petals(18);
+      sparkles(18);
     });
 
 
@@ -802,12 +855,12 @@ footer{padding-top:40px;font-size:10px}
       if (!document.hidden) renderTogetherClock();
     });
 
-    function petals(count) {
+    function sparkles(count) {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       const shapes = ['♥','♡','✧','♡'];
       for (let i = 0; i < count; i++) {
         const el = document.createElement('span');
-        el.className = 'petal';
+        el.className = 'sparkle';
         el.textContent = shapes[i % shapes.length];
         el.style.setProperty('--left', `${Math.random() * 100}%`);
         el.style.setProperty('--size', `${12 + Math.random() * 17}px`);
