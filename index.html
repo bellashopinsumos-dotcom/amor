@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#f9eeee" />
+  <meta name="description" content="Hay una sorpresa que solamente tú puedes descubrir." />
+  <title>Un secreto para ti ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --cream:#fffaf6; --paper:#fffefd; --blush:#f9eeee; --rose:#e9bac3;
+      --wine:#763b50; --wine-deep:#5d2b40; --muted:#947a81; --gold:#b99473;
+      --line:#ead7d4; --shadow:0 22px 70px rgba(105,54,71,.12);
+      --sans:'DM Sans',Arial,sans-serif;
+      --serif:'Playfair Display',Georgia,serif;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;font-family:var(--sans);color:var(--wine-deep);
+      background:radial-gradient(ellipse at 15% 8%,#fffefc 0,transparent 42%),
+      radial-gradient(ellipse at 90% 55%,#f4d9dd 0,transparent 44%),
+      linear-gradient(155deg,#fdf3f0 0%,#f8e9eb 58%,#f9f4ee 100%);overflow-x:hidden}
+    button,input{font:inherit}
+    button{cursor:pointer}
+    button:focus-visible,input:focus-visible{outline:3px solid #c78e9f;outline-offset:5px}
+    .grain{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.12;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E")}
+    .ambient{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+    .ambient span{position:absolute;color:#d9a9b4;opacity:.32;font-family:Georgia,serif;animation:float 9s ease-in-out infinite}
+    .ambient span:nth-child(1){left:7%;top:13%;font-size:24px}
+    .ambient span:nth-child(2){right:10%;top:19%;font-size:15px;animation-delay:-4s}
+    .ambient span:nth-child(3){left:15%;bottom:14%;font-size:18px;animation-delay:-6s}
+    .ambient span:nth-child(4){right:13%;bottom:20%;font-size:28px;animation-delay:-2s}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-15px) rotate(8deg)}}
+    .layout{width:min(100%,610px);margin:0 auto;padding:26px 22px 65px;position:relative;z-index:1}
+    .topbar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:48px}
+    .brand{display:flex;align-items:center;gap:9px;text-transform:uppercase;letter-spacing:.23em;font-weight:700;font-size:10px;color:var(--wine)}
+    .brand-mark{display:grid;place-items:center;width:29px;height:29px;border:1px solid #d6aebb;border-radius:50%;font-size:16px;font-weight:400;letter-spacing:0}
+    .tiny-pill{color:var(--wine);font-size:10px;letter-spacing:.12em;text-transform:uppercase;border:1px solid #e9cfd1;padding:9px 13px;border-radius:30px;background:#fff8f4ba}
+    .gate-screen{min-height:calc(100vh - 210px);display:flex;align-items:center;justify-content:center;flex-direction:column}
+    .eyebrow{display:flex;align-items:center;justify-content:center;gap:12px;font-size:10px;font-weight:700;letter-spacing:.27em;text-transform:uppercase;color:var(--gold)}
+    .eyebrow::before,.eyebrow::after{content:'';width:31px;height:1px;background:#cbae99}
+    .flower-illustration{height:128px;margin:4px 0 9px;filter:drop-shadow(0 14px 12px rgba(146,66,84,.1));animation:sway 6s ease-in-out infinite;transform-origin:center bottom}
+    @keyframes sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+    .title{text-align:center;font-family:var(--serif);font-weight:400;font-size:clamp(36px,7.5vw,52px);letter-spacing:-.045em;line-height:1.25;margin:6px 0 17px}
+    .title em,.serif-em{font-style:italic;color:#a95e77}
+    .intro{text-align:center;color:#88727b;font-size:13px;line-height:1.9;max-width:350px;margin:0 auto 34px}
+    .lock-card{width:100%;background:linear-gradient(140deg,#fffefd,#fff9f7);border:1px solid rgba(255,255,255,.98);box-shadow:var(--shadow);border-radius:19px;padding:30px 28px 27px;position:relative;overflow:hidden}
+    .lock-card::before,.lock-card::after{position:absolute;content:'✧';font-family:Georgia,serif;color:#d3afb8;opacity:.65}
+    .lock-card::before{left:19px;top:17px;font-size:19px}
+    .lock-card::after{right:19px;bottom:14px;font-size:16px}
+    .lock-symbol{width:48px;height:48px;display:grid;place-items:center;border-radius:50%;background:#f8eaec;color:var(--wine);margin:0 auto 15px}
+    .card-title{text-align:center;font-family:var(--serif);font-weight:500;font-size:23px;margin:0 0 9px;letter-spacing:-.02em}
+    .card-sub{text-align:center;color:var(--muted);font-size:12px;line-height:1.75;margin:0 0 23px}
+    .pin-wrap{position:relative;width:min(100%,310px);margin:0 auto}
+    .pin-slots{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:9px;pointer-events:none}
+    .pin-slot{height:53px;border:1.5px solid #ead9d7;background:#fffaf9;border-radius:9px;display:grid;place-items:center;transition:all .2s}
+    .pin-slot.filled{background:#fbeef0;border-color:#cb95a4}
+    .pin-slot.active{border-color:#b96c83;box-shadow:0 0 0 3px #fae9ed}
+    .pin-slot.filled::after{content:'♥';color:#9e5870;font-size:14px;animation:pop .2s ease-out}
+    @keyframes pop{from{transform:scale(.3)}to{transform:scale(1)}}
+    .pin-input{position:absolute;inset:0;width:100%;height:100%;opacity:0;font-size:16px;cursor:text;border:0}
+    .pin-input:disabled{cursor:not-allowed}
+    .submit-btn{width:100%;max-width:310px;margin:19px auto 0;display:flex;align-items:center;justify-content:center;gap:11px;border:0;
+      border-radius:9px;background:var(--wine);color:#fff9f7;padding:17px 17px;font-size:12px;font-weight:700;letter-spacing:.09em;
+      transition:transform .2s,background .2s,box-shadow .2s;box-shadow:0 9px 19px rgba(100,42,62,.15)}
+    .submit-btn:hover{transform:translateY(-2px);background:#603044;box-shadow:0 12px 24px rgba(100,42,62,.23)}
+    .submit-btn:disabled{opacity:.6;cursor:not-allowed}
+    .feedback{text-align:center;font-size:12px;line-height:1.6;min-height:19px;margin:12px 0 0;color:#aa4058;font-weight:500}
+    .feedback.success{color:#608a65}
+    .shake{animation:shake .38s ease-out}
+    @keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-7px)}40%,80%{transform:translateX(7px)}}
+    .hint-toggle{display:block;background:none;border:none;color:#986e7d;font-size:12px;text-decoration:underline;text-underline-offset:4px;margin:15px auto 0;padding:7px}
+    .hint-content{text-align:center;font-size:12px;color:#88717b;margin:8px auto 0;max-width:295px;line-height:1.75}
+    .under-note{margin:26px 0 0;text-align:center;letter-spacing:.12em;font-size:9px;text-transform:uppercase;color:#a98a8f}
+    footer{text-align:center;color:#ac8c96;font-size:11px;padding:28px 0 0;letter-spacing:.03em}
+    footer span{color:#a25770}
+    .hidden{display:none!important}
+    .gate-exit{animation:fadeout .65s ease forwards;pointer-events:none}
+    @keyframes fadeout{to{opacity:0;transform:translateY(-15px)}}
+    .experience{animation:arrive .8s cubic-bezier(.2,.7,.25,1) both}
+    @keyframes arrive{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+    .experience-hero{text-align:center;padding:23px 0 55px}
+    .hero-tag{text-transform:uppercase;letter-spacing:.25em;color:var(--gold);font-size:10px;font-weight:700;margin-bottom:18px}
+    .hero-title{font-family:var(--serif);font-size:clamp(43px,9vw,64px);letter-spacing:-.05em;line-height:1.2;font-weight:400;margin:14px 0 22px}
+    .hero-title em{font-style:italic;color:#ae667e}
+    .heart-halo{width:130px;height:130px;border-radius:50%;display:grid;place-items:center;margin:0 auto 23px;
+      background:radial-gradient(circle,#fffdfa 0 26%,#f1d8dc 27% 47%,#f9e8e9 48% 65%,transparent 66%);font:68px Georgia,serif;color:#a85771;animation:heartbeat 2.9s ease-in-out infinite}
+    @keyframes heartbeat{0%,100%{transform:scale(1)}45%{transform:scale(1.055)}58%{transform:scale(1)}}
+    .hero-copy{font-size:13px;line-height:1.9;color:#8b737d;max-width:350px;margin:0 auto 25px}
+    .scroll-cue{text-align:center;color:#9c7180;letter-spacing:.14em;text-transform:uppercase;font-size:10px}
+    .scroll-cue b{display:block;font-size:19px;font-weight:400;margin-top:7px;animation:bob 2s ease-in-out infinite}
+    @keyframes bob{50%{transform:translateY(7px)}}
+    .section-rule{text-align:center;color:#c5a3ad;font-family:Georgia,serif;letter-spacing:13px;margin:10px auto 35px;font-size:16px}
+    .section-heading{text-align:center;font-family:var(--serif);font-weight:400;letter-spacing:-.035em;font-size:35px;line-height:1.3;margin:8px 0 16px}
+    .section-body{text-align:center;font-size:13px;line-height:1.8;color:#917b83;max-width:385px;margin:0 auto 26px}
+    .envelope-scene{padding:35px 0 34px;perspective:1200px;text-align:center}
+    .envelope-button{display:block;position:relative;width:min(300px,86%);height:195px;border:0;background:none;margin:0 auto 20px;padding:0;filter:drop-shadow(0 14px 12px rgba(121,59,75,.18))}
+    .envelope-back{position:absolute;inset:0;background:#eabec5;border-radius:7px}
+    .envelope-letter{position:absolute;left:9%;right:9%;top:12%;height:73%;border-radius:5px 5px 0 0;background:#fff8f1;display:grid;place-items:center;
+      font-family:var(--serif);color:#a4647b;font-style:italic;font-size:17px;transition:transform .8s ease}
+    .envelope-front{position:absolute;inset:0;background:#f0cdd0;clip-path:polygon(0 0,50% 52%,100% 0,100% 100%,0 100%);border-radius:0 0 7px 7px}
+    .envelope-flap{position:absolute;left:0;top:0;width:100%;height:56%;background:#e5b5be;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .7s ease;z-index:4;backface-visibility:hidden}
+    .envelope-seal{position:absolute;top:49%;left:50%;transform:translate(-50%,-50%);z-index:5;width:45px;height:45px;border-radius:50%;background:#a95d72;border:2px solid #cf98a5;color:#fff3f1;display:grid;place-items:center;font-size:24px;box-shadow:0 2px 4px #85536528;transition:opacity .3s}
+    .envelope-button.open .envelope-flap{transform:rotateX(180deg);z-index:0}
+    .envelope-button.open .envelope-letter{transform:translateY(-82px)}
+    .envelope-button.open .envelope-seal{opacity:0}
+    .envelope-label{font-size:11px;color:#99737e;letter-spacing:.12em;text-transform:uppercase}
+    .letter-paper{background:var(--paper);border:1px solid #f2dfdc;border-radius:10px;padding:38px 32px 39px;box-shadow:var(--shadow);position:relative;margin:15px 0 52px;animation:arrive .85s ease both}
+    .letter-paper::before{content:'';position:absolute;inset:9px;border:1px solid #f2e6e2;border-radius:6px;pointer-events:none}
+    .paper-flower{font:29px Georgia,serif;color:#bd8796;text-align:center;margin-bottom:17px}
+    .letter-paper h3{font-family:var(--serif);font-size:28px;font-style:italic;font-weight:400;margin:0 0 21px}
+    .letter-paper p{font-family:var(--serif);font-size:15px;line-height:2.1;color:#62444f;margin:0 0 17px}
+    .letter-paper .signoff{text-align:right;margin:24px 0 0;font-style:italic;color:#9c5a70}
+    .moments{padding-top:10px}
+    .moment-grid{display:grid;grid-template-columns:1fr;gap:13px;margin:23px 0 56px}
+    .moment{border:1px solid #f0dfe0;background:#fffdfbe3;border-radius:13px;text-align:left;padding:22px 22px 20px;display:flex;align-items:center;gap:19px;transition:transform .2s,border .2s;min-height:96px;box-shadow:0 6px 14px rgba(114,65,80,.035)}
+    .moment:hover{transform:translateY(-2px);border-color:#d9b6bd}
+    .moment-number{font:italic 30px var(--serif);color:#b7788a;min-width:28px}
+    .moment-text{flex:1;font-size:13px;font-weight:600;line-height:1.5;color:#6e4052}
+    .moment-text small{display:block;color:#9d828b;font-size:11px;font-weight:400;line-height:1.55;margin-top:5px}
+    .moment-arrow{font-size:17px;color:#a66b7d}
+    .moment.is-flipped{background:#f8e8eb}
+    .moment.is-flipped .moment-text{font-family:var(--serif);font-style:italic;font-size:16px;font-weight:400}
+    .finale{text-align:center;padding:23px 0 28px}
+    .finale-heart{display:grid;place-items:center;margin:26px auto 20px;width:108px;height:108px;border:none;border-radius:50%;background:linear-gradient(145deg,#f6dfe3,#edbdc7);color:#ad5770;font:64px Georgia,serif;box-shadow:0 15px 28px rgba(169,93,114,.16);transition:transform .2s}
+    .finale-heart:active{transform:scale(.92)}
+    .finale-result{font-family:var(--serif);font-style:italic;font-size:21px;color:#99536a;max-width:380px;line-height:1.6;margin:13px auto;animation:arrive .65s ease both}
+    .last-note{font-size:12px;color:#947e86;line-height:1.8}
+    .petal{position:fixed;top:-40px;left:var(--left);font-size:var(--size);color:#b96c83;pointer-events:none;z-index:20;animation:petalfall var(--dur) linear forwards;opacity:.8}
+    @keyframes petalfall{0%{transform:translate(0,-10px) rotate(0);opacity:0}10%{opacity:.9}100%{transform:translate(var(--drift),110vh) rotate(620deg);opacity:0}}
+    @media(min-width:650px){.layout{padding-top:36px}.topbar{margin-bottom:58px}.gate-screen{min-height:calc(100vh - 220px)}.lock-card{padding:38px 40px 34px}.letter-paper{padding:51px 48px 48px}}
+    @media(max-width:370px){.layout{padding-inline:15px}.topbar{margin-bottom:27px}.title{font-size:35px}.lock-card{padding:26px 17px}.pin-slots{gap:6px}.pin-slot{height:47px}.tiny-pill{font-size:9px;padding:8px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="ambient" aria-hidden="true"><span>♡</span><span>✧</span><span>♡</span><span>✧</span></div>
+
+  <main class="layout">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">♡</span> un detalle para ti</div>
+      <span class="tiny-pill">solo tú y yo</span>
+    </header>
+
+    <!-- PANTALLA 1: ELLA DEBE ADIVINAR LA CONTRASEÑA -->
+    <section id="gate" class="gate-screen" aria-labelledby="gate-title">
+      <div class="eyebrow">una historia especial</div>
+      <svg class="flower-illustration" width="155" viewBox="0 0 155 128" role="img" aria-label="Ilustración de flores románticas">
+        <g fill="none" stroke="#789076" stroke-width="2.1" stroke-linecap="round">
+          <path d="M77 117C75 90 77 68 69 40M77 112C86 79 103 61 108 41M75 113C59 90 43 70 40 51"/>
+          <path d="M76 83Q57 69 55 85Q68 95 76 83Z" fill="#b8c1a3"/>
+          <path d="M82 92Q104 77 106 92Q91 103 82 92Z" fill="#b8c1a3"/>
+          <path d="M57 76Q39 68 41 83Q55 89 57 76Z" fill="#cad2b8"/>
+        </g>
+        <g transform="translate(69 36)">
+          <path d="M-25-6C-31-21-12-31 0-24C15-35 33-19 24-4C28 15 4 25-1 24C-16 22-31 12-25-6Z" fill="#d997a6"/>
+          <path d="M-19-6C-18-20-5-21 0-16C9-23 20-13 17-3C20 8 3 17-3 14C-13 13-20 4-19-6Z" fill="#bb7087"/>
+          <path d="M-8-8C-4-16 8-10 8-3C8 5-5 10-10 2C-12-2-9-6-4-4" stroke="#f0c1c7" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        </g>
+        <g transform="translate(110 37) scale(.67)">
+          <path d="M-25-6C-31-21-12-31 0-24C15-35 33-19 24-4C28 15 4 25-1 24C-16 22-31 12-25-6Z" fill="#eac2bd"/>
+          <path d="M-19-6C-18-20-5-21 0-16C9-23 20-13 17-3C20 8 3 17-3 14C-13 13-20 4-19-6Z" fill="#d99c9a"/>
+          <path d="M-8-8C-4-16 8-10 8-3C8 5-5 10-10 2C-12-2-9-6-4-4" stroke="#fce2d8" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        </g>
+        <g transform="translate(41 49) scale(.57)">
+          <path d="M-25-6C-31-21-12-31 0-24C15-35 33-19 24-4C28 15 4 25-1 24C-16 22-31 12-25-6Z" fill="#eac4cb"/>
+          <path d="M-19-6C-18-20-5-21 0-16C9-23 20-13 17-3C20 8 3 17-3 14C-13 13-20 4-19-6Z" fill="#d49aaa"/>
+          <path d="M-8-8C-4-16 8-10 8-3C8 5-5 10-10 2C-12-2-9-6-4-4" stroke="#fce5e9" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        </g>
+        <path d="M57 114Q77 123 99 114" fill="none" stroke="#c7939e" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <h1 id="gate-title" class="title">Algunas sorpresas<br>se abren con una <em>llave.</em></h1>
+      <p class="intro">La tuya empieza con flores… y continúa con un pequeño secreto que preparé solamente para ti. ♡</p>
+
+      <div class="lock-card" id="lock-card">
+        <div class="lock-symbol" aria-hidden="true">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v3"/>
+          </svg>
+        </div>
+        <h2 class="card-title">Solo tú puedes entrar</h2>
+        <p class="card-sub">Hay algo muy bonito esperando al otro lado.<br>Descubre la contraseña de 6 números.</p>
+        <form id="password-form" novalidate>
+          <div class="pin-wrap" id="pin-wrap">
+            <div class="pin-slots" aria-hidden="true">
+              <span class="pin-slot"></span><span class="pin-slot"></span><span class="pin-slot"></span>
+              <span class="pin-slot"></span><span class="pin-slot"></span><span class="pin-slot"></span>
+            </div>
+            <input id="pin" class="pin-input" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="6" autocomplete="off" aria-label="Contraseña de seis números" spellcheck="false" required />
+          </div>
+          <button id="unlock" class="submit-btn" type="submit">Abrir mi sorpresa <span aria-hidden="true">♡</span></button>
+          <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+        </form>
+        <button id="hint-btn" class="hint-toggle" type="button" aria-expanded="false" aria-controls="hint">¿Necesitas una pistica?</button>
+        <p id="hint" class="hint-content hidden">No tienes que correr, mi amor. Piensa con calma… las sorpresas más bonitas merecen un intento más. ♡</p>
+      </div>
+      <p class="under-note">hecho con amor, pensando en ti</p>
+    </section>
+
+    <!-- PANTALLA 2: SOLO APARECE SI ADIVINA LOS 6 DÍGITOS -->
+    <div id="experience" class="experience hidden">
+      <section class="experience-hero" aria-labelledby="hero-heading">
+        <div class="hero-tag">la llave correcta abre cosas bonitas</div>
+        <div class="heart-halo" aria-hidden="true">♡</div>
+        <div class="eyebrow">un capítulo más</div>
+        <h1 id="hero-heading" class="hero-title">Feliz un mes más,<br><em>mi amor.</em></h1>
+        <p class="hero-copy">Hoy no quería darte solamente unas flores. Quería regalarte un momento que fuera solo nuestro… y que pudieras guardar en el corazón.</p>
+        <div class="scroll-cue">desliza para continuar <b aria-hidden="true">⌄</b></div>
+      </section>
+      <div class="section-rule" aria-hidden="true">♡ ✧ ♡</div>
+
+      <section id="letter-section" aria-labelledby="letter-heading">
+        <div class="eyebrow">de mí, para ti</div>
+        <h2 id="letter-heading" class="section-heading">Una carta que tenía<br><span class="serif-em">guardada para ti</span></h2>
+        <p class="section-body">Toca el sobre. Hay palabras que me gustan más cuando llegan directamente a ti.</p>
+        <div class="envelope-scene">
+          <button id="envelope" class="envelope-button" type="button" aria-expanded="false" aria-controls="letter" aria-label="Abrir el sobre y leer la carta">
+            <span class="envelope-back"></span><span class="envelope-letter">Para ti, mi amor ♡</span>
+            <span class="envelope-front"></span><span class="envelope-flap"></span><span class="envelope-seal">♡</span>
+          </button>
+          <div class="envelope-label" id="envelope-label">toca el sobre para abrirlo</div>
+        </div>
+
+        <!-- ✏️ PERSONALIZACIÓN: CAMBIA AQUÍ EL TEXTO DE TU CARTA -->
+        <article id="letter" class="letter-paper hidden">
+          <div class="paper-flower" aria-hidden="true">✿</div>
+          <h3>Mi amor:</h3>
+          <p>¿Te acuerdas de aquella página en la que te pregunté si querías ser mi novia? Ese día empezó una historia que hoy me hace sonreír de una manera muy especial.</p>
+          <p>Y míranos ahora… aquí estoy otra vez, escribiéndote desde una página. Pero esta vez no vengo a hacerte una pregunta, sino a darte las gracias por cada momento, por cada risa y por todo lo bonito que hemos construido.</p>
+          <p>Me encanta pensar que, entre tantos caminos posibles, la vida nos permitió coincidir. Hasta los momentos más sencillos se vuelven recuerdos especiales cuando los comparto contigo.</p>
+          <p>Gracias por ser tú, por acompañarme y por hacer que quiera seguir creando cosas bonitas a tu lado. Ojalá tengamos muchas más historias que contar, lugares por conocer y motivos para celebrar.</p>
+          <p>Feliz un mes más, mi amor. Si pudiera volver a aquel día en el que te pedí que fueras mi novia, lo haría otra vez, sin pensarlo dos veces.</p>
+          <p class="signoff">Con todo mi amor,<br>tu persona favorita ♡</p>
+        </article>
+      </section>
+
+      <section class="moments" aria-labelledby="moments-heading">
+        <div class="eyebrow">pequeños grandes motivos</div>
+        <h2 id="moments-heading" class="section-heading">Tres cositas que<br><span class="serif-em">quiero que sepas</span></h2>
+        <p class="section-body">Toca cada una. Algunas palabras también se guardan como recuerdos.</p>
+        <div class="moment-grid">
+          <button class="moment" type="button" data-title="Nuestro comienzo" data-reveal="Aquella pregunta fue el comienzo de una de mis historias favoritas: la nuestra.">
+            <span class="moment-number">01</span><span class="moment-text">Nuestro comienzo<small>Toca para descubrir mi mensaje</small></span><span class="moment-arrow" aria-hidden="true">♡</span>
+          </button>
+          <button class="moment" type="button" data-title="Nuestro presente" data-reveal="Lo mejor de los días normales es que puedo compartirlos contigo.">
+            <span class="moment-number">02</span><span class="moment-text">Nuestro presente<small>Toca para descubrir mi mensaje</small></span><span class="moment-arrow" aria-hidden="true">♡</span>
+          </button>
+          <button class="moment" type="button" data-title="Nuestro futuro" data-reveal="Quiero seguir sumando meses, aventuras y recuerdos a tu lado.">
+            <span class="moment-number">03</span><span class="moment-text">Nuestro futuro<small>Toca para descubrir mi mensaje</small></span><span class="moment-arrow" aria-hidden="true">♡</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="finale" aria-labelledby="finale-heading">
+        <div class="eyebrow">y antes de terminar...</div>
+        <h2 id="finale-heading" class="section-heading">Me falta decirte<br><span class="serif-em">una última cosita</span></h2>
+        <p class="section-body">Presiona este corazón y descubre mi último secreto.</p>
+        <button id="final-heart" class="finale-heart" type="button" aria-label="Descubrir el último mensaje">♡</button>
+        <p id="final-message" class="finale-result hidden" role="status">De todas las historias que pude vivir, qué bonito que una de mis favoritas sea contigo. Te elegiría una y mil veces. ❤️</p>
+        <p class="last-note">Gracias por otro mes juntos. Esto apenas continúa…</p>
+      </section>
+    </div>
+    <footer>Una pequeña página, un amor muy grande <span>♡</span></footer>
+  </main>
+
+  <script>
+    'use strict';
+
+    // La contraseña no aparece escrita en el archivo: aquí se compara su resumen SHA-256.
+    // Esto es un juego romántico, no un sistema de seguridad para proteger datos privados.
+    const KEY_HASH = 'b5b671c549b21e9c1784b791bc4cdaf1b92293a64580627c7194d17a6ae6524a';
+    // Respaldo para navegadores que no admitan Web Crypto (resumen FNV-1a, no reversible directamente).
+    const KEY_FALLBACK = '51c98fe3';
+
+    const pin = document.getElementById('pin');
+    const slots = [...document.querySelectorAll('.pin-slot')];
+    const feedback = document.getElementById('feedback');
+    const form = document.getElementById('password-form');
+    const submit = document.getElementById('unlock');
+    const gate = document.getElementById('gate');
+    const experience = document.getElementById('experience');
+
+    function fnv1a(s) {
+      let h = 0x811c9dc5;
+      for (let i = 0; i < s.length; i++) {
+        h ^= s.charCodeAt(i);
+        h = Math.imul(h, 0x01000193);
+      }
+      return (h >>> 0).toString(16).padStart(8, '0');
+    }
+
+    async function isCorrect(value) {
+      if (window.crypto && window.crypto.subtle) {
+        const data = new TextEncoder().encode(value);
+        const digest = await window.crypto.subtle.digest('SHA-256', data);
+        const hex = [...new Uint8Array(digest)].map(b => b.toString(16).padStart(2, '0')).join('');
+        return hex === KEY_HASH;
+      }
+      return fnv1a(value) === KEY_FALLBACK;
+    }
+
+    function renderPin() {
+      pin.value = pin.value.replace(/\D/g, '').slice(0, 6);
+      slots.forEach((slot, i) => {
+        slot.classList.toggle('filled', i < pin.value.length);
+        slot.classList.toggle('active', i === pin.value.length && i < 6 && document.activeElement === pin);
+      });
+    }
+
+    pin.addEventListener('input', () => {
+      feedback.textContent = '';
+      renderPin();
+    });
+    pin.addEventListener('focus', renderPin);
+    pin.addEventListener('blur', renderPin);
+    document.getElementById('pin-wrap').addEventListener('click', () => pin.focus());
+    renderPin();
+
+    const hintBtn = document.getElementById('hint-btn');
+    const hint = document.getElementById('hint');
+    hintBtn.addEventListener('click', () => {
+      const expanded = hintBtn.getAttribute('aria-expanded') === 'true';
+      hintBtn.setAttribute('aria-expanded', String(!expanded));
+      hint.classList.toggle('hidden', expanded);
+      hintBtn.textContent = expanded ? '¿Necesitas una pistica?' : 'Ocultar pistica';
+    });
+
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      if (submit.disabled) return;
+      const value = pin.value;
+      if (value.length !== 6) {
+        feedback.textContent = 'La llave tiene 6 números, mi amor. ♡';
+        pin.focus();
+        return;
+      }
+      submit.disabled = true;
+      try {
+        const correct = await isCorrect(value);
+        if (correct) {
+          feedback.classList.add('success');
+          feedback.textContent = '¡Lo lograste! Tu sorpresa te está esperando. ♡';
+          pin.disabled = true;
+          gate.classList.add('gate-exit');
+          window.setTimeout(() => {
+            gate.classList.add('hidden');
+            experience.classList.remove('hidden');
+            window.scrollTo({top: 0, behavior: 'instant'});
+            document.getElementById('hero-heading').setAttribute('tabindex', '-1');
+            document.getElementById('hero-heading').focus({preventScroll:true});
+            petals(24);
+          }, 650);
+        } else {
+          feedback.textContent = 'Todavía no, mi amor… inténtalo otra vez. 💗';
+          document.getElementById('lock-card').classList.remove('shake');
+          void document.getElementById('lock-card').offsetWidth;
+          document.getElementById('lock-card').classList.add('shake');
+          pin.value = '';
+          renderPin();
+          pin.focus();
+        }
+      } catch (error) {
+        feedback.textContent = 'Ocurrió un error. Intenta de nuevo, por favor.';
+      } finally {
+        submit.disabled = false;
+      }
+    });
+
+    const envelope = document.getElementById('envelope');
+    envelope.addEventListener('click', () => {
+      if (envelope.classList.contains('open')) return;
+      envelope.classList.add('open');
+      envelope.setAttribute('aria-expanded', 'true');
+      document.getElementById('envelope-label').textContent = 'con todo mi corazón, para ti ♡';
+      window.setTimeout(() => {
+        document.getElementById('letter').classList.remove('hidden');
+        document.getElementById('letter').scrollIntoView({behavior:'smooth', block:'start'});
+      }, 800);
+    });
+
+    document.querySelectorAll('.moment').forEach(button => {
+      button.addEventListener('click', () => {
+        if (button.classList.contains('is-flipped')) return;
+        button.classList.add('is-flipped');
+        button.querySelector('.moment-text').textContent = button.dataset.reveal;
+        button.querySelector('.moment-arrow').textContent = '♥';
+      });
+    });
+
+    document.getElementById('final-heart').addEventListener('click', () => {
+      document.getElementById('final-message').classList.remove('hidden');
+      document.getElementById('final-heart').textContent = '♥';
+      petals(18);
+    });
+
+    function petals(count) {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const shapes = ['♥','♡','✿','✧'];
+      for (let i = 0; i < count; i++) {
+        const el = document.createElement('span');
+        el.className = 'petal';
+        el.textContent = shapes[i % shapes.length];
+        el.style.setProperty('--left', `${Math.random() * 100}%`);
+        el.style.setProperty('--size', `${12 + Math.random() * 17}px`);
+        el.style.setProperty('--drift', `${(Math.random() - .5) * 180}px`);
+        el.style.setProperty('--dur', `${3 + Math.random() * 3}s`);
+        el.style.animationDelay = `${Math.random() * 1.5}s`;
+        document.body.appendChild(el);
+        window.setTimeout(() => el.remove(), 8000);
+      }
+    }
+  </script>
+</body>
+</html>
