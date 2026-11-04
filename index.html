@@ -135,7 +135,111 @@
     @media(min-width:650px){.layout{padding-top:36px}.topbar{margin-bottom:58px}.gate-screen{min-height:calc(100vh - 220px)}.lock-card{padding:38px 40px 34px}.letter-paper{padding:51px 48px 48px}}
     @media(max-width:370px){.layout{padding-inline:15px}.topbar{margin-bottom:27px}.title{font-size:35px}.lock-card{padding:26px 17px}.pin-slots{gap:6px}.pin-slot{height:47px}.tiny-pill{font-size:9px;padding:8px}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
-  </style>
+  
+/* Capítulo II — renovada experiencia editorial y romántica */
+:root{--wine:#69334b;--wine-deep:#51243b;--muted:#927984;--gold:#bc9873;--rose:#edb7c1}
+body{background:
+  radial-gradient(ellipse at 5% 17%,#fffefa 0%,transparent 39%),
+  radial-gradient(ellipse at 95% 67%,#efd0d6 0%,transparent 41%),
+  linear-gradient(155deg,#fff7f4 0%,#fae8ed 55%,#fff7ef 100%)}
+.layout{width:min(100%,720px);padding:27px 22px 72px}
+.topbar{margin-bottom:20px}
+.brand{letter-spacing:.15em}
+.gate-screen{padding:32px 0 70px;min-height:calc(100svh - 125px)}
+.title{font-size:clamp(39px,7vw,61px);line-height:1.13;letter-spacing:-.058em;max-width:650px}
+.intro{max-width:410px;font-size:14px;line-height:1.86;margin-bottom:31px}
+.flower-illustration{height:151px;margin:9px 0 15px;filter:drop-shadow(0 16px 14px #69334b20)}
+.lock-card{width:min(100%,430px);border-radius:22px;background:linear-gradient(150deg,#fffefd 10%,#fff7f4 100%);border:1px solid #fff;box-shadow:0 24px 60px rgba(102,49,74,.16);padding:36px 30px}
+.card-title{font-size:26px}
+.card-sub{font-size:13px}
+.pin-slot{height:57px;border-radius:12px}
+.submit-btn{border-radius:12px;padding:18px;letter-spacing:.05em;font-size:13px}
+.gate-caption{font-family:var(--serif);font-style:italic;text-align:center;font-size:15px;color:#a06e7d;margin-top:6px}
+.attempt-message{font-size:11px;text-align:center;color:#ae7889;min-height:14px}
+.hint-shell{margin:17px auto 0;max-width:330px;text-align:center;border-top:1px solid #f0e0df;padding-top:13px}
+.hint-toggle{margin:0 auto;color:#8c526a}
+.hint-content{font-family:var(--serif);font-size:14px;color:#865e70;background:#fdf1f1;padding:13px 16px;border-radius:12px;line-height:1.7}
+.hint-progress{font-size:10px;color:#a78891;margin:6px 0}
+.under-note{font-size:10px;margin-top:25px}
+.experience{overflow:visible}
+.experience-hero{padding:64px 0 83px;position:relative}
+.experience-hero::before{content:'✧';position:absolute;top:30px;right:9%;font:35px Georgia,serif;color:#d6a2ad}
+.heart-halo{width:148px;height:148px;font-size:78px;margin-bottom:27px}
+.hero-title{font-size:clamp(46px,8vw,74px)}
+.hero-copy{font-size:14px;max-width:405px;line-height:2}
+.hero-tag{font-size:11px}
+.hero-ornament{text-align:center;font:italic 17px var(--serif);color:#aa7484;letter-spacing:.02em;margin:0 0 15px}
+.chapter-panel{position:relative;margin:4px -9px 80px;padding:56px 25px 46px;overflow:hidden;border-radius:28px;color:#fff4ed;
+ background:radial-gradient(circle at 52% 17%,#a5657c 0%,transparent 42%),
+ linear-gradient(145deg,#72364f,#4e2438 70%,#3f1d31);box-shadow:0 26px 55px #71354b33;text-align:center}
+.chapter-panel::before{content:'';position:absolute;inset:10px;border:1px solid #debda459;border-radius:20px;pointer-events:none}
+.chapter-panel::after{content:'✧     ♡     ✧';white-space:pre;position:absolute;top:23px;left:0;right:0;font-family:Georgia,serif;font-size:15px;letter-spacing:.42em;color:#e9c6bc9e;pointer-events:none}
+.chapter-kicker{position:relative;color:#f0cdc4;font-size:10px;letter-spacing:.3em;text-transform:uppercase;margin:18px 0 17px}
+.chapter-title{position:relative;font:400 clamp(35px,7vw,53px)/1.22 var(--serif);letter-spacing:-.04em;margin:0}
+.chapter-title em{color:#f4d2c4;font-weight:400}
+.chapter-copy{position:relative;max-width:385px;margin:16px auto 24px;font-size:12px;line-height:1.95;color:#edd5d7}
+.chapter-timeline{display:flex;justify-content:center;align-items:center;gap:8px;margin:0 auto 26px;position:relative}
+.chapter-node{background:transparent;border:1px solid #e2b9b3aa;border-radius:100px;width:49px;height:49px;color:#fff7ee;
+  font:italic 21px var(--serif);transition:transform .25s,background .25s,border .25s}
+.chapter-node:hover,.chapter-node[aria-pressed="true"]{background:#f8e2d6;color:#6c3c4b;transform:scale(1.1);border-color:#fff3ec}
+.chapter-line{width:clamp(20px,10vw,67px);height:1px;background:#eac0b899}
+.chapter-story{max-width:405px;margin:0 auto;min-height:112px;padding:16px 10px;position:relative}
+.chapter-story-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#f3c7b7}
+.chapter-story-text{font:italic 22px/1.58 var(--serif);margin:8px auto 0;color:#fff5ee;animation:arrive .45s ease}
+.chapter-small{font:12px var(--sans);color:#e5bcc4;margin:8px 0 0}
+#letter-section{padding-top:10px}
+#letter-section .section-heading{font-size:clamp(34px,6vw,45px)}
+.letter-paper{background:linear-gradient(160deg,#fffefa,#fffaf6);box-shadow:0 22px 55px #71354b22;border-radius:13px;max-width:630px;margin:15px auto 65px}
+.letter-paper p{font-size:clamp(15px,2.4vw,17px);line-height:2}
+.moments{margin:10px auto 70px}
+.moments .section-heading{font-size:clamp(33px,6vw,43px)}
+.moment{border-radius:15px;box-shadow:0 9px 21px #7c465112}
+.moment.is-flipped{background:#fff5f2;border-color:#d5a5ae}
+.garden{margin:15px -9px 78px;padding:45px 17px 38px;border:1px solid #edcfd0;border-radius:27px;
+ background:linear-gradient(170deg,#fffbf9,#f7e3e5);text-align:center;box-shadow:0 14px 44px #86435d16}
+.garden .section-heading{font-size:clamp(32px,6vw,44px);margin-bottom:14px}
+.garden-buds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:435px;margin:28px auto 16px}
+.bud{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;border:1px solid #edd1d3;
+ background:#fffbf9;border-radius:18px;padding:21px 5px 16px;min-height:131px;color:#874e65;box-shadow:0 12px 22px #a96c7a12;transition:transform .2s,background .3s}
+.bud:hover,.bud.is-picked{transform:translateY(-3px);background:#fcecef;border-color:#d7a8b6}
+.bud-flower{font:44px Georgia,serif;color:#bf718b;line-height:1;transition:transform .4s}
+.bud.is-picked .bud-flower{transform:rotate(-15deg) scale(1.12)}
+.bud-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.garden-note{font:italic 19px/1.6 var(--serif);color:#8f526c;max-width:450px;min-height:61px;margin:22px auto 4px;padding:0 8px;animation:arrive .5s ease}
+.garden-count{font-size:11px;color:#9e7888}
+.garden-keeper{font:italic 15px var(--serif);color:#9a5570;margin:13px auto 0}
+.finale{padding:52px 23px 40px;margin:0 -9px 0;border-radius:27px;
+ background:radial-gradient(circle at 50% 50%,#fdfafa,#f9eaeb 65%,#f2d8de);border:1px solid #f0d8db;box-shadow:0 14px 40px #86435d13}
+.finale .section-heading{font-size:clamp(35px,6vw,46px)}
+.finale-heart{width:124px;height:124px;font-size:72px;background:linear-gradient(145deg,#eebbc7,#d88ba4);color:#fff7f1;
+ box-shadow:0 14px 0 #ecccd3,0 23px 40px #a85f792e;border:3px solid #f9dfe4;animation:heartbeat 2.7s ease-in-out infinite}
+.finale-result{font-size:clamp(22px,5vw,30px);max-width:480px;margin:25px auto 10px}
+.finale-love{font-size:11px;letter-spacing:.21em;text-transform:uppercase;color:#a27886;margin-top:20px}
+.final-heart-row{font:26px Georgia,serif;color:#bc8195;letter-spacing:.45em;margin:4px auto 17px}
+.final-quote{margin:30px auto 0;font:italic 17px/1.75 var(--serif);color:#966b7d;max-width:435px}
+footer{padding-top:40px;font-size:10px}
+@media (max-width:430px) {
+ .layout{padding-inline:16px}
+ .topbar{margin-bottom:12px}
+ .flower-illustration{height:128px}
+ .gate-screen{padding-top:27px}
+ .title{font-size:38px}
+ .lock-card{padding:27px 19px}
+ .pin-slots{gap:7px}
+ .pin-slot{height:52px}
+ .chapter-panel,.garden,.finale{margin-left:0;margin-right:0}
+ .chapter-panel{padding-inline:20px}
+ .chapter-title{font-size:36px}
+ .chapter-story-text{font-size:20px}
+ .bud{min-height:117px;padding:16px 3px}
+ .bud-flower{font-size:38px}
+ .letter-paper{padding:37px 24px}
+}
+@media(prefers-reduced-motion:reduce){
+ .chapter-story-text,.bud,.bud-flower,.finale-heart{animation:none;transition:none}
+}
+
+</style>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -149,7 +253,7 @@
 
     <!-- PANTALLA 1: ELLA DEBE ADIVINAR LA CONTRASEÑA -->
     <section id="gate" class="gate-screen" aria-labelledby="gate-title">
-      <div class="eyebrow">una historia especial</div>
+      <div class="eyebrow">un secreto entre tú y yo</div>
       <svg class="flower-illustration" width="155" viewBox="0 0 155 128" role="img" aria-label="Ilustración de flores románticas">
         <g fill="none" stroke="#789076" stroke-width="2.1" stroke-linecap="round">
           <path d="M77 117C75 90 77 68 69 40M77 112C86 79 103 61 108 41M75 113C59 90 43 70 40 51"/>
@@ -174,8 +278,8 @@
         </g>
         <path d="M57 114Q77 123 99 114" fill="none" stroke="#c7939e" stroke-width="4" stroke-linecap="round"/>
       </svg>
-      <h1 id="gate-title" class="title">Algunas sorpresas<br>se abren con una <em>llave.</em></h1>
-      <p class="intro">La tuya empieza con flores… y continúa con un pequeño secreto que preparé solamente para ti. ♡</p>
+      <h1 id="gate-title" class="title">Las flores son el inicio.<br>Lo mejor está <em>por descubrir.</em></h1>
+      <p class="intro">Si estás aquí, las flores ya llegaron a tus manos. Pero todavía hay algo que quiero regalarte… y tendrás que encontrar la llave. ♡</p>
 
       <div class="lock-card" id="lock-card">
         <div class="lock-symbol" aria-hidden="true">
@@ -183,8 +287,8 @@
             <rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v3"/>
           </svg>
         </div>
-        <h2 class="card-title">Solo tú puedes entrar</h2>
-        <p class="card-sub">Hay algo muy bonito esperando al otro lado.<br>Descubre la contraseña de 6 números.</p>
+        <h2 class="card-title">Este rincón es solo tuyo</h2>
+        <p class="card-sub">La sorpresa tiene seis números como llave.<br>Solo tú puedes intentar descubrirlos.</p>
         <form id="password-form" novalidate>
           <div class="pin-wrap" id="pin-wrap">
             <div class="pin-slots" aria-hidden="true">
@@ -196,10 +300,9 @@
           <button id="unlock" class="submit-btn" type="submit">Abrir mi sorpresa <span aria-hidden="true">♡</span></button>
           <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
         </form>
-        <button id="hint-btn" class="hint-toggle" type="button" aria-expanded="false" aria-controls="hint">¿Necesitas una pistica?</button>
-        <p id="hint" class="hint-content hidden">No tienes que correr, mi amor. Piensa con calma… las sorpresas más bonitas merecen un intento más. ♡</p>
+        <div class="hint-shell"><button id="hint-btn" class="hint-toggle" type="button" aria-expanded="false" aria-controls="hint">Quiero una pista ♡</button><p id="hint" class="hint-content hidden" role="status" aria-live="polite"></p><p class="hint-progress" id="hint-progress"></p></div><p class="attempt-message" id="attempt-message">No hay límite de intentos. Este secreto tiene paciencia contigo.</p>
       </div>
-      <p class="under-note">hecho con amor, pensando en ti</p>
+      <p class="gate-caption">Hay regalos que solo se entienden con el corazón.</p><p class="under-note">una sorpresa creada únicamente para ti · ♡</p>
     </section>
 
     <!-- PANTALLA 2: SOLO APARECE SI ADIVINA LOS 6 DÍGITOS -->
@@ -209,15 +312,31 @@
         <div class="heart-halo" aria-hidden="true">♡</div>
         <div class="eyebrow">un capítulo más</div>
         <h1 id="hero-heading" class="hero-title">Feliz un mes más,<br><em>mi amor.</em></h1>
-        <p class="hero-copy">Hoy no quería darte solamente unas flores. Quería regalarte un momento que fuera solo nuestro… y que pudieras guardar en el corazón.</p>
-        <div class="scroll-cue">desliza para continuar <b aria-hidden="true">⌄</b></div>
+        <p class="hero-copy">Esta vez quise regalarte algo más que flores: un lugar al que puedas volver cuando quieras recordar lo mucho que significas para mí.</p>
+        <p class="hero-ornament">Qué bonito volver a encontrarte en una página…</p><div class="scroll-cue">desliza para descubrir lo que sigue <b aria-hidden="true">⌄</b></div>
+      </section>
+
+      <section class="chapter-panel" aria-labelledby="chapter-heading">
+        <p class="chapter-kicker">antes de abrir tu carta</p>
+        <h2 class="chapter-title" id="chapter-heading">Una pequeña historia,<br><em>nuestra gran historia.</em></h2>
+        <p class="chapter-copy">Hay tres capítulos que guardo con especial cariño. Toca cada número y acompáñame a recordarlos.</p>
+        <div class="chapter-timeline" role="group" aria-label="Capítulos de nuestra historia">
+          <button class="chapter-node" data-chapter="0" aria-pressed="true" type="button" aria-label="Capítulo uno">I</button><span class="chapter-line" aria-hidden="true"></span>
+          <button class="chapter-node" data-chapter="1" aria-pressed="false" type="button" aria-label="Capítulo dos">II</button><span class="chapter-line" aria-hidden="true"></span>
+          <button class="chapter-node" data-chapter="2" aria-pressed="false" type="button" aria-label="Capítulo tres">III</button>
+        </div>
+        <div class="chapter-story" aria-live="polite">
+          <div class="chapter-story-label" id="chapter-story-label">capítulo I · aquella pregunta</div>
+          <p class="chapter-story-text" id="chapter-story-text">Un día, una página web llevó una pregunta que me daba nervios y muchísima ilusión: ¿quieres ser mi novia?</p>
+        </div>
+        <p class="chapter-small">Lo más bonito es que nuestra historia sigue escribiéndose. ♡</p>
       </section>
       <div class="section-rule" aria-hidden="true">♡ ✧ ♡</div>
 
       <section id="letter-section" aria-labelledby="letter-heading">
         <div class="eyebrow">de mí, para ti</div>
-        <h2 id="letter-heading" class="section-heading">Una carta que tenía<br><span class="serif-em">guardada para ti</span></h2>
-        <p class="section-body">Toca el sobre. Hay palabras que me gustan más cuando llegan directamente a ti.</p>
+        <h2 id="letter-heading" class="section-heading">Y ahora sí…<br><span class="serif-em">esto es para ti.</span></h2>
+        <p class="section-body">Toca el sobre para abrir las palabras que escribí pensando en nosotros. Nadie más tiene una carta como esta.</p>
         <div class="envelope-scene">
           <button id="envelope" class="envelope-button" type="button" aria-expanded="false" aria-controls="letter" aria-label="Abrir el sobre y leer la carta">
             <span class="envelope-back"></span><span class="envelope-letter">Para ti, mi amor ♡</span>
@@ -256,13 +375,28 @@
         </div>
       </section>
 
+      
+      <section class="garden" aria-labelledby="garden-heading">
+        <div class="eyebrow">flores que no se marchitan</div>
+        <h2 id="garden-heading" class="section-heading">Te traje un ramo…<br><span class="serif-em">y también tres deseos.</span></h2>
+        <p class="section-body">Estas flores no están hechas de pétalos. Están hechas de cosas que quiero seguir viviendo contigo. Tócalas una por una.</p>
+        <div class="garden-buds" role="group" aria-label="Tres deseos por descubrir">
+          <button class="bud" type="button" data-wish="0" aria-label="Descubrir primer deseo" aria-pressed="false"><span class="bud-flower" aria-hidden="true">✿</span><span class="bud-label">un deseo</span></button>
+          <button class="bud" type="button" data-wish="1" aria-label="Descubrir segundo deseo" aria-pressed="false"><span class="bud-flower" aria-hidden="true">❀</span><span class="bud-label">otro deseo</span></button>
+          <button class="bud" type="button" data-wish="2" aria-label="Descubrir tercer deseo" aria-pressed="false"><span class="bud-flower" aria-hidden="true">✿</span><span class="bud-label">y uno más</span></button>
+        </div>
+        <p class="garden-note" id="garden-note" aria-live="polite">«Elige una flor y descubre lo que guardé en ella»</p>
+        <p class="garden-count" id="garden-count">0 de 3 deseos descubiertos</p>
+        <p class="garden-keeper hidden" id="garden-keeper">Listo. Ya conoces los tres deseos que quiero cuidar contigo. ♡</p>
+      </section>
+
       <section class="finale" aria-labelledby="finale-heading">
         <div class="eyebrow">y antes de terminar...</div>
         <h2 id="finale-heading" class="section-heading">Me falta decirte<br><span class="serif-em">una última cosita</span></h2>
-        <p class="section-body">Presiona este corazón y descubre mi último secreto.</p>
-        <button id="final-heart" class="finale-heart" type="button" aria-label="Descubrir el último mensaje">♡</button>
-        <p id="final-message" class="finale-result hidden" role="status">De todas las historias que pude vivir, qué bonito que una de mis favoritas sea contigo. Te elegiría una y mil veces. ❤️</p>
-        <p class="last-note">Gracias por otro mes juntos. Esto apenas continúa…</p>
+        <p class="section-body">Si llegaste hasta aquí, solo me queda decirte algo que quiero que recuerdes siempre.</p>
+        <div class="final-heart-row" aria-hidden="true">♡ ✧ ♡</div><button id="final-heart" class="finale-heart" type="button" aria-label="Descubrir el último mensaje">♡</button>
+        <p id="final-message" class="finale-result hidden" role="status">Si la vida me devolviera al día en que te pedí que fueras mi novia, volvería a elegirte. Una vez. Mil veces. Todas las veces. ❤️</p>
+        <p class="final-quote">Lo de aquel día fue una pregunta.<br>Lo de hoy es una certeza: qué bonito es tenerte en mi vida.</p><p class="last-note">Feliz otro mes juntos, mi amor. Esto apenas continúa…</p><p class="finale-love">con todo mi corazón ♡</p>
       </section>
     </div>
     <footer>Una pequeña página, un amor muy grande <span>♡</span></footer>
@@ -369,6 +503,81 @@
       } finally {
         submit.disabled = false;
       }
+    });
+
+
+    // Una pista a la vez. Nunca revelamos la clave, ni siquiera por accidente.
+    const hintPrompts = [
+      'Primera pista: son seis números. Ninguna letra, ninguna palabra. Solo seis pequeños secretos.',
+      'Segunda pista: no busques una respuesta en esta página. Piensa en lo que es especial para nosotros.',
+      'Última pista: la respuesta no está en las flores. Está en lo que tú recuerdes y en lo que quieras probar. ♡'
+    ];
+    let hintStep=0;
+    const newHintBtn=document.getElementById('hint-btn');
+    const newHint=document.getElementById('hint');
+    const hintProgress=document.getElementById('hint-progress');
+    // Sustituimos el controlador sencillo por tres pistas progresivas.
+    newHintBtn.replaceWith(newHintBtn.cloneNode(true));
+    const hintButton=document.getElementById('hint-btn');
+    hintButton.addEventListener('click',function(){
+      if(hintStep<hintPrompts.length)hintStep++;
+      newHint.textContent=hintPrompts[Math.max(0,hintStep-1)];
+      newHint.classList.remove('hidden');
+      hintButton.setAttribute('aria-expanded','true');
+      hintProgress.textContent='Pista '+hintStep+' de '+hintPrompts.length;
+      hintButton.textContent=hintStep<hintPrompts.length?'Dame otra pista ♡':'Ya descubrí todas las pistas ♡';
+      if(hintStep===hintPrompts.length)hintButton.disabled=true;
+    });
+    let wrongAttempts=0;
+    const initialErrorListener=() => {
+      // La comprobación del PIN sigue funcionando de forma independiente.
+      window.setTimeout(()=>{
+        if(feedback.textContent.startsWith('Todavía no')){
+          wrongAttempts++;
+          const variants=[
+            'Los mejores secretos no siempre se descubren a la primera. ♡',
+            'Me encanta imaginar tu carita intentando adivinarlo.',
+            'No te rindas, hay algo precioso esperándote. ♥'
+          ];
+          document.getElementById('attempt-message').textContent=variants[(wrongAttempts-1)%variants.length];
+        }
+      },50);
+    };
+    form.addEventListener('submit',initialErrorListener);
+    const stories=[
+      ['capítulo I · aquella pregunta','Un día, una página web llevó una pregunta que me daba nervios y muchísima ilusión: ¿quieres ser mi novia?'],
+      ['capítulo II · ese sí tan bonito','No sabía cuántos recuerdos nos esperaban. Solo sabía que quería comenzar esta historia contigo.'],
+      ['capítulo III · aquí y ahora','Hoy vuelvo a escribirte desde una página. Ya no para pedirte que seas mi novia, sino para celebrar lo feliz que me hace que lo seas.']
+    ];
+    document.querySelectorAll('.chapter-node').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const idx=Number(btn.dataset.chapter);
+        document.querySelectorAll('.chapter-node').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));
+        document.getElementById('chapter-story-label').textContent=stories[idx][0];
+        const p=document.getElementById('chapter-story-text');
+        p.textContent=stories[idx][1];
+        p.style.animation='none';void p.offsetWidth;p.style.animation='';
+      });
+    });
+    const wishes=[
+      'Deseo que nunca nos falten esas risas que aparecen incluso en los días más normales.',
+      'Deseo que sigamos descubriendo lugares, historias y versiones bonitas de nosotros.',
+      'Deseo que, al pasar los meses, sigamos eligiéndonos con cariño, paciencia y muchas ganas.'
+    ];
+    const flowers=new Set();
+    document.querySelectorAll('.bud').forEach(bud=>{
+      bud.addEventListener('click',()=>{
+        const idx=Number(bud.dataset.wish);
+        bud.classList.add('is-picked');
+        bud.setAttribute('aria-pressed','true');
+        flowers.add(idx);
+        document.getElementById('garden-note').textContent=wishes[idx];
+        document.getElementById('garden-count').textContent=flowers.size+' de 3 deseos descubiertos';
+        if(flowers.size===3) {
+          document.getElementById('garden-keeper').classList.remove('hidden');
+          petals(10);
+        }
+      });
     });
 
     const envelope = document.getElementById('envelope');
